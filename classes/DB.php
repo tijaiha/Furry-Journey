@@ -18,7 +18,7 @@ Class DB {
 
 			die($e->getMessage());
 
-		};
+		}
 
 	}
 
@@ -51,15 +51,18 @@ Class DB {
 		try {
 			$query = $this->connect();
 			$result = $query->prepare("SELECT username FROM user WHERE username LIKE ?");
-			$result->bindParam(1, $user);
-			$result->execute();
-			$return = $result->fetchAll(PDO::FETCH_ASSOC);
-			return $return[0]['username'];
+
 			
 		} catch(Exception $e) {
-	
-			echo $e->getMessage();
+
+			die($e->getMessage());
+
 		}
+
+		$result->bindParam(1, $user);
+		$result->execute();
+		$return = $result->fetchAll(PDO::FETCH_ASSOC);
+		return $return[0]['username'];
 	}
 
 	public function insert($table, $data) {
