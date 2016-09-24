@@ -52,34 +52,13 @@
 	"buffers":
 	[
 		{
-			"file": "/C/wamp64/www/Laith/index.php",
-			"settings":
-			{
-				"buffer_size": 255,
-				"line_ending": "Windows"
-			}
-		},
-		{
+			"contents": "<?php\n\nClass DB {\n\n	private function connect(){\n\n		$dsn = 'mysql:host=127.0.0.1;dbname=reporting';\n		$username = 'reportingdb';\n		$password = '?4o=WxInph-w#n6%=_';\n		\n		try {\n\n			$db = new PDO($dsn, $username, $password);\n			$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);\n			return $db;\n			\n		} catch(PDOException $e) {\n\n			die($e->getMessage());\n\n		}\n\n	}\n\n	public function runQuery($sql) {\n		\n		$query = $this->connect();\n		$result = $query->query($sql);\n		return $result;\n		var_dump($result);\n\n	}\n\n	public function putUser($table, $data) {\n\n		$user = $data['username'];\n		if (!$this->userExists($user)) {\n\n			echo \"no user\";\n\n		} else {\n\n			echo \"user found\";\n\n		}\n\n	}\n\n	public function userExists($user){\n\n		try {\n			$query = $this->connect();\n			$result = $query->prepare(\"SELECT username FROM user WHERE username LIKE ?\");\n\n			\n		} catch(Exception $e) {\n\n			die($e->getMessage());\n\n		}\n\n		$result->bindParam(1, $user);\n		$result->execute();\n		$return = $result->fetchAll(PDO::FETCH_ASSOC);\n		return $return[0]['username'];\n	}\n\n	public function insert($table, $data) {\n\n		$query = $this->connect();\n		$keys = array_keys($data);\n		$sql = \"INSERT INTO \" . $table . \" (\";\n		$counter = count($keys);\n		$i = 1;\n\n		foreach ($keys as $value) {\n			if($i < $counter) {\n				$sql .= $value . \", \";\n				$i++;\n			} else {\n				$sql .= $value;\n			}\n		}\n\n		$sql .= \") VALUES (\";\n		$i = 1;\n\n		foreach ($data as $value) {\n			if($i < $counter) {\n				$sql .= \"?, \";\n				$i++;\n			} else {\n				$sql .= \"?\";\n			}\n		}\n\n		$i = 1;\n		$sql .= \")\";\n		echo $sql;\n		$result = $query->prepare($sql);\n\n		foreach ($data as $value) {\n			$result->bindValue($i, $value);\n			$i++;\n		}\n\n		$result->execute();\n\n	}\n}\n\n\n",
 			"file": "/C/wamp64/www/Laith/classes/DB.php",
+			"file_size": 1808,
+			"file_write_time": 131187083003157418,
 			"settings":
 			{
-				"buffer_size": 1467,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/wamp64/www/Laith/includes/tablecols.php",
-			"settings":
-			{
-				"buffer_size": 531,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/wamp64/www/Laith/core/init.php",
-			"settings":
-			{
-				"buffer_size": 152,
+				"buffer_size": 1696,
 				"line_ending": "Windows"
 			}
 		}
@@ -98,6 +77,14 @@
 			[
 				"rein",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"git",
+				"GitHub: Public Gist from Selection"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
@@ -132,19 +119,23 @@
 		"/C/wamp64/www/Laith",
 		"/C/wamp64/www/Laith/classes",
 		"/C/wamp64/www/Laith/core",
-		"/C/wamp64/www/Laith/includes"
+		"/C/wamp64/www/Laith/functions",
+		"/C/wamp64/www/Laith/includes",
+		"/C/wamp64/www/Laith/sublime"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/wamp64/www/Laith/core/init.php",
+		"/C/wamp64/www/Laith/includes/tablecols.php",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/saves/Modded Career/persistent.sfs",
 		"/C/www/login/classes/DB.php",
 		"/C/wamp64/bin/apache/apache2.4.18/conf/httpd.conf",
-		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/login/classes/DB.php",
 		"/C/wamp64/www/login/index.php",
 		"/C/wamp64/www/login/core/init.php",
-		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/classes/Config.php",
-		"/C/wamp64/www/Laith/index.php",
 		"/C/wamp64/www/login/classes/Hash.php",
 		"/C/wamp64/www/login/classes/Validate.php",
 		"/C/wamp64/www/login/classes/Config.php",
@@ -261,9 +252,7 @@
 		"/C/Games/SteamLibrary/steamapps/common/7 Days To Die/Data/Config/progression.xml",
 		"/C/Users/tijai/Documents/AHK Scripts/GW2.ahk",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/AsteroidScannerSetup.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/KerbalEngineer/Parts/EngineerChip/EngineerChip.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityTechTree/Tree/CommunityTechTree.cfg"
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/AsteroidScannerSetup.cfg"
 	],
 	"find":
 	{
@@ -283,6 +272,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sci",
 			"8080",
 			"directory",
 			"greek",
@@ -414,52 +404,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/wamp64/www/Laith/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 255,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								253,
-								253
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/C/wamp64/www/Laith/classes/DB.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1467,
+						"buffer_size": 1696,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								470,
-								470
+								366,
+								366
 							]
 						],
 						"settings":
@@ -468,67 +430,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/wamp64/www/Laith/includes/tablecols.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 531,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								157,
-								7
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/wamp64/www/Laith/core/init.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								146,
-								146
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -574,7 +479,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "Laith.sublime-project",
+	"project": "/C/wamp64/www/Laith/Sublime/Laith.sublime-project",
 	"replace":
 	{
 		"height": 62.0
