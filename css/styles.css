@@ -1,0 +1,83 @@
+body,html {
+    height:  100%;
+    margin:  0px auto;
+    padding: 0px auto;
+}
+
+.pagewrapper {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+    margin:  0px;
+    padding: 0px;
+    display: flex;
+	flex-direction: row;
+}
+
+.sidebar:hover {
+	min-width: 160px;
+	background-color: grey;
+}
+
+.sidebar {
+	min-width: 40px;
+	background-color: grey;
+}
+
+.contentwrapper {
+	background-color: red;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	height: 122px;
+	background-color: green;
+}
+
+.content {
+	background-color: yellow;
+    display: flex;
+   	justify-content: center;
+	flex-direction: row;
+	flex-grow: 1;
+}
+
+.transactionwrapper {
+	min-width: 1000px;
+	max-width: 1000px;
+    display: flex;
+	flex-direction: column;
+	background-color: purple;
+	flex-grow: 1;
+}
+
+.transtop {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+
+.transbottom {
+	height: 10%;
+}
+
+.revenue {
+	background-color: orange;
+	flex-grow: 1;
+}
+
+.deductions {
+	background-color: lightblue;
+	flex-grow: 1;
+}
+
+.actionwrapper {
+	max-width:450px;
+	min-width: 450px;
+	background-color: pink;
+	flex-grow: 1;
+}
+
+
