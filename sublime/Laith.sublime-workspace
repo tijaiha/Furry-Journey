@@ -21,7 +21,7 @@
 			],
 			[
 				"maxth",
-				"MaxThreadsPerHotkey	#MaxThreadsPerHotkey"
+				"MaxThreadsPerHotkey\t#MaxThreadsPerHotkey"
 			],
 			[
 				"Esc",
@@ -52,34 +52,10 @@
 	"buffers":
 	[
 		{
-			"file": "/C/wamp64/www/Laith/index.php",
+			"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 			"settings":
 			{
-				"buffer_size": 255,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/wamp64/www/Laith/classes/DB.php",
-			"settings":
-			{
-				"buffer_size": 1467,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/wamp64/www/Laith/includes/tablecols.php",
-			"settings":
-			{
-				"buffer_size": 531,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/wamp64/www/Laith/core/init.php",
-			"settings":
-			{
-				"buffer_size": 152,
+				"buffer_size": 2129,
 				"line_ending": "Windows"
 			}
 		}
@@ -98,6 +74,14 @@
 			[
 				"rein",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"git",
+				"GitHub: Public Gist from Selection"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
@@ -132,19 +116,24 @@
 		"/C/wamp64/www/Laith",
 		"/C/wamp64/www/Laith/classes",
 		"/C/wamp64/www/Laith/core",
-		"/C/wamp64/www/Laith/includes"
+		"/C/wamp64/www/Laith/functions",
+		"/C/wamp64/www/Laith/includes",
+		"/C/wamp64/www/Laith/sublime"
 	],
 	"file_history":
 	[
+		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/CONFIGURATION/BR/Configuration.bk",
+		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/wamp64/www/Laith/core/init.php",
+		"/C/wamp64/www/Laith/includes/tablecols.php",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/saves/Modded Career/persistent.sfs",
 		"/C/www/login/classes/DB.php",
 		"/C/wamp64/bin/apache/apache2.4.18/conf/httpd.conf",
-		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/login/classes/DB.php",
 		"/C/wamp64/www/login/index.php",
 		"/C/wamp64/www/login/core/init.php",
-		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/classes/Config.php",
-		"/C/wamp64/www/Laith/index.php",
 		"/C/wamp64/www/login/classes/Hash.php",
 		"/C/wamp64/www/login/classes/Validate.php",
 		"/C/wamp64/www/login/classes/Config.php",
@@ -260,10 +249,7 @@
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/B9PartSwitch/B9PartSwitch.cfg",
 		"/C/Games/SteamLibrary/steamapps/common/7 Days To Die/Data/Config/progression.xml",
 		"/C/Users/tijai/Documents/AHK Scripts/GW2.ahk",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/AsteroidScannerSetup.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/KerbalEngineer/Parts/EngineerChip/EngineerChip.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityTechTree/Tree/CommunityTechTree.cfg"
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg"
 	],
 	"find":
 	{
@@ -283,6 +269,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sci",
 			"8080",
 			"directory",
 			"greek",
@@ -300,9 +287,9 @@
 			"188",
 			"Running",
 			"F6",
-			"		Send, {F3}",
+			"\t\tSend, {F3}",
 			"SendInput",
-			"		Send, {LWin}",
+			"\t\tSend, {LWin}",
 			"fog",
 			"texture",
 			"physx",
@@ -330,7 +317,7 @@
 			"Consumed",
 			"fixer",
 			"weapon",
-			"	Send, {W Up}",
+			"\tSend, {W Up}",
 			"develop",
 			"105",
 			"MINING TOOLS",
@@ -414,121 +401,35 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/wamp64/www/Laith/index.php",
+					"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 255,
+						"buffer_size": 2129,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								253,
-								253
+								1521,
+								1521
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/XML/XML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/wamp64/www/Laith/classes/DB.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1467,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/wamp64/www/Laith/includes/tablecols.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 531,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								157,
-								7
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/wamp64/www/Laith/core/init.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								146,
-								146
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -574,7 +475,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "Laith.sublime-project",
+	"project": "/C/wamp64/www/Laith/Sublime/Laith.sublime-project",
 	"replace":
 	{
 		"height": 62.0
