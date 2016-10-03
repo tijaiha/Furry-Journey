@@ -21,7 +21,7 @@
 			],
 			[
 				"maxth",
-				"MaxThreadsPerHotkey	#MaxThreadsPerHotkey"
+				"MaxThreadsPerHotkey\t#MaxThreadsPerHotkey"
 			],
 			[
 				"Esc",
@@ -52,13 +52,10 @@
 	"buffers":
 	[
 		{
-			"contents": "<?php\n\nClass DB {\n\n	private function connect(){\n\n		$dsn = 'mysql:host=127.0.0.1;dbname=reporting';\n		$username = 'reportingdb';\n		$password = '?4o=WxInph-w#n6%=_';\n		\n		try {\n\n			$db = new PDO($dsn, $username, $password);\n			$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);\n			return $db;\n			\n		} catch(PDOException $e) {\n\n			die($e->getMessage());\n\n		}\n\n	}\n\n	public function runQuery($sql) {\n		\n		$query = $this->connect();\n		$result = $query->query($sql);\n		return $result;\n		var_dump($result);\n\n	}\n\n	public function putUser($table, $data) {\n\n		$user = $data['username'];\n		if (!$this->userExists($user)) {\n\n			echo \"no user\";\n\n		} else {\n\n			echo \"user found\";\n\n		}\n\n	}\n\n	public function userExists($user){\n\n		try {\n			$query = $this->connect();\n			$result = $query->prepare(\"SELECT username FROM user WHERE username LIKE ?\");\n\n			\n		} catch(Exception $e) {\n\n			die($e->getMessage());\n\n		}\n\n		$result->bindParam(1, $user);\n		$result->execute();\n		$return = $result->fetchAll(PDO::FETCH_ASSOC);\n		return $return[0]['username'];\n	}\n\n	public function insert($table, $data) {\n\n		$query = $this->connect();\n		$keys = array_keys($data);\n		$sql = \"INSERT INTO \" . $table . \" (\";\n		$counter = count($keys);\n		$i = 1;\n\n		foreach ($keys as $value) {\n			if($i < $counter) {\n				$sql .= $value . \", \";\n				$i++;\n			} else {\n				$sql .= $value;\n			}\n		}\n\n		$sql .= \") VALUES (\";\n		$i = 1;\n\n		foreach ($data as $value) {\n			if($i < $counter) {\n				$sql .= \"?, \";\n				$i++;\n			} else {\n				$sql .= \"?\";\n			}\n		}\n\n		$i = 1;\n		$sql .= \")\";\n		echo $sql;\n		$result = $query->prepare($sql);\n\n		foreach ($data as $value) {\n			$result->bindValue($i, $value);\n			$i++;\n		}\n\n		$result->execute();\n\n	}\n}\n\n\n",
-			"file": "/C/wamp64/www/Laith/classes/DB.php",
-			"file_size": 1808,
-			"file_write_time": 131187083003157418,
+			"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 			"settings":
 			{
-				"buffer_size": 1696,
+				"buffer_size": 2129,
 				"line_ending": "Windows"
 			}
 		}
@@ -125,6 +122,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/CONFIGURATION/BR/Configuration.bk",
 		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/Laith/includes/tablecols.php",
@@ -251,8 +249,7 @@
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/B9PartSwitch/B9PartSwitch.cfg",
 		"/C/Games/SteamLibrary/steamapps/common/7 Days To Die/Data/Config/progression.xml",
 		"/C/Users/tijai/Documents/AHK Scripts/GW2.ahk",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/AsteroidScannerSetup.cfg"
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg"
 	],
 	"find":
 	{
@@ -290,9 +287,9 @@
 			"188",
 			"Running",
 			"F6",
-			"		Send, {F3}",
+			"\t\tSend, {F3}",
 			"SendInput",
-			"		Send, {LWin}",
+			"\t\tSend, {LWin}",
 			"fog",
 			"texture",
 			"physx",
@@ -320,7 +317,7 @@
 			"Consumed",
 			"fixer",
 			"weapon",
-			"	Send, {W Up}",
+			"\tSend, {W Up}",
 			"develop",
 			"105",
 			"MINING TOOLS",
@@ -409,28 +406,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/wamp64/www/Laith/classes/DB.php",
+					"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1696,
+						"buffer_size": 2129,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								366,
-								366
+								1521,
+								1521
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/XML/XML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
