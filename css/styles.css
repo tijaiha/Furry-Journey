@@ -4,6 +4,13 @@ body,html {
     padding: 0px auto;
 }
 
+div {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black: 
+}
+
 .pagewrapper {
 	width: 100%;
 	height: auto;
@@ -29,14 +36,24 @@ body,html {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+
 }
 
 .header {
 	height: 122px;
 	background-color: green;
+	display:flex;
+	flex-direction: row;
+}
+
+.header div {
+	width:10px;
+	background-color: blue;
+	flex-grow: 1;
 }
 
 .content {
+	padding-bottom: 40px;
 	background-color: yellow;
     display: flex;
    	justify-content: center;
@@ -59,18 +76,37 @@ body,html {
 	flex-grow: 1;
 }
 
+.transmid {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+
+.transmid div {
+	min-width: 500px;
+	max-width: 500px;
+}
+
 .transbottom {
 	height: 10%;
 }
 
 .revenue {
+	max-width: 500px;
 	background-color: orange;
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
 }
 
 .deductions {
 	background-color: lightblue;
+	max-width: 500px;
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
 }
 
 .actionwrapper {
@@ -80,4 +116,49 @@ body,html {
 	flex-grow: 1;
 }
 
+/*--------------------------------------------------------------*/
 
+.startingcontainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.startingcontainer div {
+	flex-grow: 1;
+	height: 43px;
+	min-width: 168px;
+	max-width: 168px;
+}
+
+.startingcontainer div:nth-child(2), 
+.sourcecontainer div:nth-child(2),
+.revenuecontainer div:nth-child(2) {
+    max-width: 110px;
+	min-width: 110px;
+}
+
+.revenueheader {
+	height: 43px;
+}
+
+.sourcecontainer {
+	display: flex;
+}
+
+.sourcecontainer div {
+	flex-grow: 1;
+	height: 25px;
+	min-width: 168px;
+	max-width: 168px;
+}
+
+.revenuecontainer {
+	display: flex;
+}
+
+.revenuecontainer div {
+	flex-grow: 1;
+	height: 43px;
+	min-width: 168px;
+	max-width: 168px;
+}

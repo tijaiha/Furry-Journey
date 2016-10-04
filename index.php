@@ -16,16 +16,48 @@
 		</div>
 		<div class="contentwrapper">
 			<div class="header">
-				<p>Header</p>
+				<div><p>Logo</p></div>
+				<div><p>Title</p></div>
+				<div><p>Store info</p></div>
 			</div>
 			<div class="content">
 				<div class="transactionwrapper">
 					<div class="transtop">
 						<div class="revenue">
-							<p>Revenue</p>
+							<div class="startingcontainer">
+								<div>Starting Cash</div>
+								<div>Amount</div>
+							</div>
+							<div class="revenueheader">Store Revenue (Cash In)</div>
+							<div class="sourcecontainer">
+								<div>Source</div>
+								<div>Input</div>
+							</div>
 						</div>
 						<div class="deductions">
-							<p>Deductions</p>
+							<div class="startingcontainer">
+								<div>Ending Cash</div>
+								<div>Amount</div>
+							</div>
+							<div class="revenueheader">Store Deductions (Cash Out)</div>
+							<div class="sourcecontainer">
+								<div>Source</div>
+								<div>Input</div>
+							</div>
+						</div>
+					</div>
+					<div class="transmid">
+						<div>							
+							<div class="revenuecontainer">
+								<div>Total Revenue</div>
+								<div>Amount</div>
+							</div>
+						</div>
+						<div>
+							<div class="revenuecontainer">
+								<div>Total Deductions</div>
+								<div>Amount</div>
+							</div>
 						</div>
 					</div>
 					<div class="transbottom">
