@@ -25,21 +25,25 @@
 					<div class="transtop">
 						<div class="revenue">
 							<div class="startingcontainer">
-								<div>Starting Cash</div>
-								<div>Amount</div>
+								<div><h1>Starting Cash</h1></div>
+								<div><h1>$10,000</h1></div>
 							</div>
-							<div class="revenueheader">Store Revenue (Cash In)</div>
+							<div class="revenueheader">
+								<div><h1>Store Revenue (Cash In)</h1></div>
+							</div>
 							<div class="sourcecontainer">
 								<div>Source</div>
 								<div>Input</div>
 							</div>
 						</div>
 						<div class="deductions">
-							<div class="startingcontainer">
-								<div>Ending Cash</div>
-								<div>Amount</div>
+							<div class="endingcontainer">
+								<div><h1>Ending Cash</h1></div>
+								<div><h1>$250</h1></div>
 							</div>
-							<div class="revenueheader">Store Deductions (Cash Out)</div>
+							<div class="deductionsheader">
+								<div><h1>Store Revenue (Cash Out)</h1></div>
+							</div>
 							<div class="sourcecontainer">
 								<div>Source</div>
 								<div>Input</div>
@@ -47,21 +51,18 @@
 						</div>
 					</div>
 					<div class="transmid">
-						<div>							
-							<div class="revenuecontainer">
-								<div>Total Revenue</div>
-								<div>Amount</div>
-							</div>
+ 						<div class="revenuecontainer">
+							<div><h1>Total Revenue</h1></div>
+							<div><h1>$11,000</h1></div>
 						</div>
-						<div>
-							<div class="revenuecontainer">
-								<div>Total Deductions</div>
-								<div>Amount</div>
-							</div>
+						<div class="deductionscontainer">
+							<div><h1>Total Deductions</h1></div>
+							<div><h1>$20,750</h1></div>
 						</div>
 					</div>
 					<div class="transbottom">
-						<p>Balance</p>
+						<div><h1>End of Day Balance</h1></div>
+						<div><h1>$0</h1></div>
 					</div>
 				</div>
 				<div class="actionwrapper">

@@ -1,76 +1,108 @@
 body,html {
-    height:  100%;
-    margin:  0px auto;
-    padding: 0px auto;
+	height:  100%;
+	margin:  0px auto;
+	padding: 0px auto;
+}
+
+p {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+h1 {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.revenuecontainer div h1, .deductionscontainer div h1,
+.revenueheader div h1, .deductionsheader div h1 {
+	color: #767171;
 }
 
 div {
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 1px;
-	border-color: black: 
+	border-color: black;
 }
 
 .pagewrapper {
 	width: 100%;
 	height: auto;
 	min-height: 100%;
-    margin:  0px;
-    padding: 0px;
-    display: flex;
+	margin:  0px;
+	padding: 0px;
+	display: flex;
 	flex-direction: row;
 }
 
+/*--------------------------------------------------------------*/
+
 .sidebar:hover {
 	min-width: 160px;
-	background-color: grey;
+	/*background-color: grey;*/
 }
 
 .sidebar {
 	min-width: 40px;
-	background-color: grey;
+	/*background-color: grey;*/
 }
 
 .contentwrapper {
-	background-color: red;
+	/*background-color: red;*/
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 
 }
 
+/*--------------------------------------------------------------*/
+
 .header {
 	height: 122px;
-	background-color: green;
+	/*background-color: green;*/
 	display:flex;
 	flex-direction: row;
 }
 
 .header div {
 	width:10px;
-	background-color: blue;
+	/*background-color: blue;*/
 	flex-grow: 1;
 }
 
 .content {
-	padding-bottom: 40px;
-	background-color: yellow;
-    display: flex;
-   	justify-content: center;
+	margin-bottom: 10px;
+	/*background-color: yellow;*/
+	display: flex;
+	justify-content: center;
 	flex-direction: row;
 	flex-grow: 1;
 }
 
+/*--------------------------------------------------------------*/
+
 .transactionwrapper {
-	min-width: 1000px;
-	max-width: 1000px;
-    display: flex;
+	min-width: 640px;
+	max-width: 640px;
+	display: flex;
 	flex-direction: column;
-	background-color: purple;
+	/*background-color: purple;*/
 	flex-grow: 1;
 }
 
+.actionwrapper {
+	max-width:450px;
+	min-width: 450px;
+	/*background-color: pink;*/
+	flex-grow: 1;
+}
+
+/*--------------------------------------------------------------*/
+
 .transtop {
+	/*background-color: green;*/
 	display: flex;
 	flex-direction: row;
 	flex-grow: 1;
@@ -79,66 +111,106 @@ div {
 .transmid {
 	display: flex;
 	flex-direction: row;
-	flex-grow: 1;
+	flex-grow: 0;
 }
 
 .transmid div {
-	min-width: 500px;
-	max-width: 500px;
+	height: 44px;
+	min-width: 320px;
+	max-width: 320px;
 }
 
 .transbottom {
-	height: 10%;
+	height: 54px;
+	min-width: 640px;
+	max-width: 640px;
+	display: flex;
+	padding: 2px;
+	margin-bottom: 2px;
+
+
 }
 
-.revenue {
-	max-width: 500px;
-	background-color: orange;
+.transbottom div {
+	height: 52px;
+	border-radius: 6px;
+	background-color: #767171;
 	flex-grow: 1;
 	display: flex;
-	flex-direction: column;
-
+	align-items: center;
+	justify-content: center;
 }
 
-.deductions {
-	background-color: lightblue;
-	max-width: 500px;
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-
+.transbottom div:nth-child(1) {
+	width: 400px;
 }
 
-.actionwrapper {
-	max-width:450px;
-	min-width: 450px;
-	background-color: pink;
-	flex-grow: 1;
+.transbottom div:nth-child(2) {
+	width: 240px;
 }
 
 /*--------------------------------------------------------------*/
 
-.startingcontainer {
+.revenue {
+	max-width: 320px;
+	/*background-color: orange;*/
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.deductions {
+	/*background-color: lightblue;*/
+	max-width: 320px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
+}
+
+/*--------------------------------------------------------------*/
+
+.startingcontainer, .endingcontainer {
 	display: flex;
 	flex-direction: row;
 }
 
-.startingcontainer div {
+.startingcontainer div, .endingcontainer div {
 	flex-grow: 1;
+	display: flex;
 	height: 43px;
 	min-width: 168px;
 	max-width: 168px;
 }
 
+.startingcontainer div, 
+.endingcontainer div,
+.sourcecontainer div,
+.revenuecontainer div,
+.deductionscontainer div,
+.revenueheader div,
+.deductionsheader div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .startingcontainer div:nth-child(2), 
+.endingcontainer div:nth-child(2), 
 .sourcecontainer div:nth-child(2),
 .revenuecontainer div:nth-child(2) {
-    max-width: 110px;
 	min-width: 110px;
 }
 
-.revenueheader {
+.revenueheader, .deductionsheader {
 	height: 43px;
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+}
+
+.revenueheader div, .deductionsheader div {
+	flex-grow: 1;
 }
 
 .sourcecontainer {
@@ -152,13 +224,45 @@ div {
 	max-width: 168px;
 }
 
-.revenuecontainer {
+.revenuecontainer, .deductionscontainer {
 	display: flex;
 }
 
-.revenuecontainer div {
+.revenuecontainer div, .deductionscontainer div {
 	flex-grow: 1;
+	border-radius: 6px;
 	height: 43px;
-	min-width: 168px;
-	max-width: 168px;
+	min-width: 110px;
+}
+
+.revenuecontainer div:nth-child(2), .deductionscontainer div:nth-child(2) {
+	flex-grow: 0;
+	max-width: 110px;
+}
+
+.deductionscontainer div, .deductionsheader div{
+	border-radius: 6px;
+	background-color: #fbe5d6;
+}
+
+.revenuecontainer div, .revenueheader div {
+	border-radius: 6px;
+	background-color: #c5e0b4;
+}
+
+.startingcontainer div, .endingcontainer div {
+	border-radius: 6px;
+	background-color: #767171;
+}
+
+.endingcontainer div:nth-child(2) {
+	background-color: #fff;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #767171;
+}
+
+.endingcontainer div:nth-child(2) h1 {
+	color: #767171;
 }
