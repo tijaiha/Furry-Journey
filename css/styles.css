@@ -1,3 +1,6 @@
+/*buttons 300*/
+/*top buttons 126*/
+
 body,html {
 	height:  100%;
 	margin:  0px auto;
@@ -120,9 +123,10 @@ h1 {
 }
 
 .actionwrapper {
-
+	display: flex;
+	flex-direction: column;
 	/*background-color: pink;*/
-	flex-grow: 0;
+	flex-grow: 1;
 }
 
 /*--------------------------------------------------------------*/
@@ -323,6 +327,14 @@ h1 {
 	align-items: center;
 }
 
+.userinfo div:first-child {
+	margin-top: 14px;
+}
+
+.userinfo div:last-child {
+	margin-bottom: 14px;
+}
+
 .userinfo div span {
 	flex: 1;
 	justify-content: center;
@@ -435,3 +447,34 @@ h1 {
 	border: 2px solid #fbe5d6;
 }
 
+/*--------------------------------------------------------------*/
+
+.actionwrapper {
+	background-color: grey;
+	margin-left: 90px;
+}
+
+.navbuttons {
+	display: flex;
+	background-color: pink;
+}
+
+.calendar {
+	/*calendar 297x233*/
+	min-height: 233px;
+	max-height: 233px;
+	min-width: 297px;
+	max-width: 297px;
+	background-image: url("../images/calendar.png");
+	background-repeat: no-repeat;
+}
+
+.savebutton {
+	display: flex;
+	background-color: yellow;
+}
+
+.submitbutton {
+	display: flex;
+	background-color: green;
+}

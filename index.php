@@ -123,7 +123,7 @@
 
 
 
-							
+
 						</div>
 						<div class="deductions">
 							<div class="endingcontainer">
@@ -154,8 +154,26 @@
 						<div><h1>$0</h1></div>
 					</div>
 				</div>
+				
 				<div class="actionwrapper">
-					<p>Action wrapper (calendar, submit)</p>
+					<div class="navbuttons">
+						<div><h1>Prev</h1></div>
+						<div><h1>Next</h1></div>
+					</div>
+					
+					<div class="calendar">
+						
+					</div>
+					
+					<div class="savebutton">
+						<div><h1>Save Work</h1></div>
+						<div><p>Last Saved 5 Min Ago</p></div>
+					</div>
+					
+					<div class="submitbutton">
+						<div><h1>Submit Report</h1></div>
+					</div>
+
 				</div>
 			</div>
 		</div>

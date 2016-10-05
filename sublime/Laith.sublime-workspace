@@ -71,7 +71,7 @@
 			"file": "/C/wamp64/www/Laith/index.php",
 			"settings":
 			{
-				"buffer_size": 1817,
+				"buffer_size": 4525,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -136,9 +136,9 @@
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/.git/.gitignore",
 		"/C/wamp64/www/Laith/Sublime/Laith.sublime-project",
 		"/C/wamp64/www/Laith/index.php",
-		"/C/wamp64/www/Laith/.git/.gitignore",
 		"/C/wamp64/www/Laith/.git/gitignore",
 		"/C/wamp64/www/Laith/oldindex.php",
 		"/C/wamp64/www/Laith/css/reset.css",
@@ -283,6 +283,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			">\n",
 			"}",
 			"{",
 			";",
@@ -431,15 +432,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1817,
+						"buffer_size": 4525,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								630,
-								630
+								4198,
+								4198
 							]
 						],
 						"settings":
@@ -448,7 +449,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
+						"translation.y": 2639.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
