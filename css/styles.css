@@ -20,11 +20,18 @@ h1 {
 	color: #767171;
 }
 
-div {
+.div {
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 1px;
 	border-color: black;
+}
+
+.span {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	border-color: red;
 }
 
 .pagewrapper {
@@ -46,7 +53,9 @@ div {
 
 .sidebar {
 	min-width: 40px;
-	/*background-color: grey;*/
+	position: relative;
+    z-index: 1;
+	background-color: #767171;
 }
 
 .contentwrapper {
@@ -61,15 +70,32 @@ div {
 
 .header {
 	height: 122px;
+	position: relative;
+	z-index: 0;
 	/*background-color: green;*/
 	display:flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 .header div {
-	width:10px;
 	/*background-color: blue;*/
 	flex-grow: 1;
+}
+
+.header div:nth-child(4) {
+	/*background-color: blue;*/
+	width: 275px;
+	flex-grow: 0;
+}
+
+.headershadow {
+	height: 28px;
+	width: 100%;
+	background-image: url("../images/headershadow.png");
+	background-repeat: repeat-x;
+	background-position: bottom;
+
 }
 
 .content {
@@ -265,4 +291,80 @@ div {
 
 .endingcontainer div:nth-child(2) h1 {
 	color: #767171;
+}
+
+/*--------------------------------------------------------------*/
+
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	padding-right: 10px;
+}
+
+.userinfo div {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex: 1 100%;
+	align-items: center;
+}
+
+.userinfo div span {
+	flex: 1;
+	justify-content: center;
+	text-transform: uppercase;
+	color: #ff9110;
+	font-weight: bold;
+	font-size: 16px;
+	white-space: nowrap;
+}
+
+.userinfo div span:nth-child(2) {
+	text-transform: capitalize;
+	color: #767171;
+	text-align: right;
+}
+
+.userinfo div span:nth-child(1) {
+	flex-grow: 0;
+	
+}
+
+/*--------------------------------------------------------------*/
+
+.pagetitle {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.pagetitle h3 {
+	flex-grow: 1;
+	text-align: right;
+	text-transform: capitalize;
+	font-size: 48px;
+	font-weight: bold;
+	color: #767171;
+	white-space: nowrap;
+}
+
+.split {
+	max-width: 4px;
+	min-width: 4px;
+	background-image: url("../images/split.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0px 15px 0px 15px ;
+	flex-grow: 0;
+}
+
+/*--------------------------------------------------------------*/
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+    height: 108px;
 }

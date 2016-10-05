@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"flex",
+				"flex-grow"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
 				"_",
 				"_pdo"
 			],
@@ -52,10 +68,11 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
+			"file": "/C/wamp64/www/Laith/index.php",
 			"settings":
 			{
-				"buffer_size": 2129,
+				"buffer_size": 1817,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -92,7 +109,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -114,19 +131,22 @@
 	"expanded_folders":
 	[
 		"/C/wamp64/www/Laith",
-		"/C/wamp64/www/Laith/classes",
-		"/C/wamp64/www/Laith/core",
-		"/C/wamp64/www/Laith/functions",
-		"/C/wamp64/www/Laith/includes",
+		"/C/wamp64/www/Laith/css",
 		"/C/wamp64/www/Laith/sublime"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/Sublime/Laith.sublime-project",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/wamp64/www/Laith/.git/.gitignore",
+		"/C/wamp64/www/Laith/.git/gitignore",
+		"/C/wamp64/www/Laith/oldindex.php",
+		"/C/wamp64/www/Laith/css/reset.css",
+		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/CONFIGURATION/BR/Configuration.bk",
 		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/Laith/includes/tablecols.php",
-		"/C/wamp64/www/Laith/index.php",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/saves/Modded Career/persistent.sfs",
 		"/C/www/login/classes/DB.php",
 		"/C/wamp64/bin/apache/apache2.4.18/conf/httpd.conf",
@@ -243,13 +263,7 @@
 		"/C/Users/tijai/Desktop/PZhydrocraftlab",
 		"/C/Users/tijai/Documents/AHK Scripts/7DTD.ahk",
 		"/C/Users/tijai/Zomboid/mods/loaded.txt",
-		"/C/Users/tijai/Zomboid/mods/MSB_Electrical/media/lua/server/XpSystem/MSB_Electrical_XPSystem.lua",
-		"/C/Users/tijai/Zomboid/mods/MSB_Electrical/media/lua/server/Items/MSB_Electrical_Distribution.lua",
-		"/C/Users/tijai/Zomboid/mods/MSB_Electrical/media/scripts/MSB_Electrical_Items.txt",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/B9PartSwitch/B9PartSwitch.cfg",
-		"/C/Games/SteamLibrary/steamapps/common/7 Days To Die/Data/Config/progression.xml",
-		"/C/Users/tijai/Documents/AHK Scripts/GW2.ahk",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/CommunityResourcePack/Asteroid.cfg"
+		"/C/Users/tijai/Zomboid/mods/MSB_Electrical/media/lua/server/XpSystem/MSB_Electrical_XPSystem.lua"
 	],
 	"find":
 	{
@@ -269,6 +283,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}",
+			"{",
+			";",
 			"sci",
 			"8080",
 			"directory",
@@ -360,9 +377,13 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"}\\n",
+			"{\\n",
+			";\\n",
+			"/n",
 			"gameOver",
 			"afk",
 			"admincheat ",
@@ -406,27 +427,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
+					"file": "/C/wamp64/www/Laith/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2129,
+						"buffer_size": 1817,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1521,
-								1521
+								630,
+								630
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 216.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -516,7 +538,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 186.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

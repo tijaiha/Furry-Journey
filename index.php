@@ -16,10 +16,29 @@
 		</div>
 		<div class="contentwrapper">
 			<div class="header">
-				<div><p>Logo</p></div>
-				<div><p>Title</p></div>
-				<div><p>Store info</p></div>
+				<div class="logo">
+					<img src="images/logo.png"/>
+				</div>
+				<div class="pagetitle">
+					<h3>Daily Balance Sheet</h3>
+				</div>
+				<div class="split"></div>
+				<div class="userinfo">
+					<div>
+						<span>store #1</span>
+						<span>Arrowood Blvd</span>
+					</div>
+					<div>
+						<span>wednesday</span>
+						<span>september 14, 2016</span>
+					</div>
+					<div>
+						<span>user id</span>
+						<span>kelly</span>
+					</div>
+				</div>
 			</div>
+			<div class="headershadow"></div>
 			<div class="content">
 				<div class="transactionwrapper">
 					<div class="transtop">
@@ -51,7 +70,7 @@
 						</div>
 					</div>
 					<div class="transmid">
- 						<div class="revenuecontainer">
+						<div class="revenuecontainer">
 							<div><h1>Total Revenue</h1></div>
 							<div><h1>$11,000</h1></div>
 						</div>
