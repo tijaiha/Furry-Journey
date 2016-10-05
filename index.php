@@ -50,10 +50,80 @@
 							<div class="revenueheader">
 								<div><h1>Store Revenue (Cash In)</h1></div>
 							</div>
-							<div class="sourcecontainer">
-								<div>Source</div>
-								<div>Input</div>
+							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
 							</div>
+
+
+							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>							<div class="revenuesource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
+							</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							
 						</div>
 						<div class="deductions">
 							<div class="endingcontainer">
@@ -63,9 +133,9 @@
 							<div class="deductionsheader">
 								<div><h1>Store Revenue (Cash Out)</h1></div>
 							</div>
-							<div class="sourcecontainer">
-								<div>Source</div>
-								<div>Input</div>
+							<div class="deductionssource">
+								<div><p>Source</p></div>
+								<div><p>Input</p></div>
 							</div>
 						</div>
 					</div>

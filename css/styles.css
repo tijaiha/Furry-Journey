@@ -6,6 +6,9 @@ body,html {
 
 p {
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: capitalize;
 }
 
 h1 {
@@ -99,10 +102,9 @@ h1 {
 }
 
 .content {
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 	/*background-color: yellow;*/
 	display: flex;
-	justify-content: center;
 	flex-direction: row;
 	flex-grow: 1;
 }
@@ -110,19 +112,17 @@ h1 {
 /*--------------------------------------------------------------*/
 
 .transactionwrapper {
-	min-width: 640px;
-	max-width: 640px;
+	margin-left: 192px;
 	display: flex;
 	flex-direction: column;
 	/*background-color: purple;*/
-	flex-grow: 1;
+	flex-grow: 0;
 }
 
 .actionwrapper {
-	max-width:450px;
-	min-width: 450px;
+
 	/*background-color: pink;*/
-	flex-grow: 1;
+	flex-grow: 0;
 }
 
 /*--------------------------------------------------------------*/
@@ -135,6 +135,7 @@ h1 {
 }
 
 .transmid {
+	margin: 12px 0px;
 	display: flex;
 	flex-direction: row;
 	flex-grow: 0;
@@ -142,17 +143,12 @@ h1 {
 
 .transmid div {
 	height: 44px;
-	min-width: 320px;
-	max-width: 320px;
+
 }
 
 .transbottom {
 	height: 54px;
-	min-width: 640px;
-	max-width: 640px;
 	display: flex;
-	padding: 2px;
-	margin-bottom: 2px;
 
 
 }
@@ -168,30 +164,29 @@ h1 {
 }
 
 .transbottom div:nth-child(1) {
-	width: 400px;
+	margin-right: 5px;
 }
 
 .transbottom div:nth-child(2) {
-	width: 240px;
+	margin-left: 5px;
 }
 
 /*--------------------------------------------------------------*/
 
 .revenue {
-	max-width: 320px;
 	/*background-color: orange;*/
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	margin-right: 19px;
 }
 
 .deductions {
 	/*background-color: lightblue;*/
-	max-width: 320px;
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
-
+	margin-left: 19px;
 }
 
 /*--------------------------------------------------------------*/
@@ -199,6 +194,7 @@ h1 {
 .startingcontainer, .endingcontainer {
 	display: flex;
 	flex-direction: row;
+	margin-bottom: 12px;
 }
 
 .startingcontainer div, .endingcontainer div {
@@ -207,6 +203,16 @@ h1 {
 	height: 43px;
 	min-width: 168px;
 	max-width: 168px;
+	align-items: center;
+	justify-content: center;
+	margin-left: 0px;
+	margin-right: 4px;
+}
+
+.startingcontainer div:nth-child(2), 
+.endingcontainer div:nth-child(2) {
+	margin-left: 4px;
+	margin-right: 0px;
 }
 
 .startingcontainer div, 
@@ -221,18 +227,13 @@ h1 {
 	justify-content: center;
 }
 
-.startingcontainer div:nth-child(2), 
-.endingcontainer div:nth-child(2), 
-.sourcecontainer div:nth-child(2),
-.revenuecontainer div:nth-child(2) {
-	min-width: 110px;
-}
-
 .revenueheader, .deductionsheader {
 	height: 43px;
 	display: flex;
 	width: 100%;
 	flex-direction: row;
+	margin-bottom: 6px;
+
 }
 
 .revenueheader div, .deductionsheader div {
@@ -246,24 +247,39 @@ h1 {
 .sourcecontainer div {
 	flex-grow: 1;
 	height: 25px;
-	min-width: 168px;
-	max-width: 168px;
+
 }
 
 .revenuecontainer, .deductionscontainer {
 	display: flex;
+	width: 50%;
+}
+
+.revenuecontainer {
+	padding-right: 19px;
+}
+
+.deductionscontainer {
+	padding-left: 19px;
 }
 
 .revenuecontainer div, .deductionscontainer div {
 	flex-grow: 1;
 	border-radius: 6px;
-	height: 43px;
-	min-width: 110px;
+	height: 38px;
+	min-width: 168px;
+	max-width: 168px;
+	align-items: center;
+	justify-content: center;
+	margin-left: 0px;
+	margin-right: 4px;
 }
 
 .revenuecontainer div:nth-child(2), .deductionscontainer div:nth-child(2) {
-	flex-grow: 0;
-	max-width: 110px;
+	flex-grow: 1;
+	margin-left: 4px;
+	margin-right: 0px;
+
 }
 
 .deductionscontainer div, .deductionsheader div{
@@ -284,9 +300,7 @@ h1 {
 .endingcontainer div:nth-child(2) {
 	background-color: #fff;
 	box-sizing: border-box;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #767171;
+	border: solid 2px #767171;
 }
 
 .endingcontainer div:nth-child(2) h1 {
@@ -368,3 +382,56 @@ h1 {
 .logo img {
     height: 108px;
 }
+
+/*--------------------------------------------------------------*/
+
+.revenuesource, 
+.deductionssource {
+	display: flex;
+	margin-top: 6px;
+}
+
+.revenuesource div, 
+.deductionssource div{
+	color: #767171;
+	display: flex;
+	min-height: 22px;
+	max-height: 22px;
+	min-width: 168px;
+	max-width: 168px;
+	align-items: center;
+	border-radius: 6px;
+	margin-left: 0px;
+	margin-right: 4px;
+}
+
+.revenuesource div p, 
+.deductionssource div p {
+	margin-left: 8px;
+}
+
+.revenuesource div {
+	background-color: #c5e0b4;
+}
+
+.deductionssource div {
+	background-color: #fbe5d6;
+}
+
+.deductionssource div:nth-child(2),
+.revenuesource div:nth-child(2) {
+	box-sizing: border-box;
+	margin-left: 4px;
+	margin-right: 0px;
+	background-color: #fff;
+	justify-content: center;
+}
+
+.revenuesource div:nth-child(2) {
+	border: 2px solid #c5e0b4;
+}
+
+.deductionssource div:nth-child(2) {
+	border: 2px solid #fbe5d6;
+}
+
