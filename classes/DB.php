@@ -31,6 +31,24 @@ Class DB {
 
 	}
 
+	public function fetchUsers() {
+		$query = $this->connect();
+		$result = $query->query("
+
+			SELECT 	user.id_pk as id,
+					user.first_name as first, 
+					user.last_name as last, 
+					user.username as user, 
+					permissions.permission_name as role
+			FROM user
+			LEFT JOIN permissions
+			ON user.permissions_fk=permissions.id_pk;
+
+			");
+		$return = $result->fetchAll(PDO::FETCH_ASSOC);
+		return $return;
+	}
+
 	public function putUser($table, $data) {
 
 		$user = $data['username'];
@@ -62,7 +80,11 @@ Class DB {
 		$result->bindParam(1, $user);
 		$result->execute();
 		$return = $result->fetchAll(PDO::FETCH_ASSOC);
-		return $return[0]['username'];
+		if ($return[0]['username']) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public function insert($table, $data) {
@@ -96,7 +118,7 @@ Class DB {
 
 		$i = 1;
 		$sql .= ")";
-		echo $sql;
+		//echo $sql;
 		$result = $query->prepare($sql);
 
 		foreach ($data as $value) {

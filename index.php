@@ -1,3 +1,10 @@
+<?php
+
+require_once 'core/init.php';
+$sid = session_id();
+
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -12,7 +19,8 @@
 <body>
 	<div class="pagewrapper">
 		<div class="sidebar">
-			<p>Sidebar</p>
+			<a href="index.php?page=daily">Daily</a><br>
+			<a href="index.php?page=users">Users</a><br>
 		</div>
 		<div class="contentwrapper">
 			<div class="header">
@@ -40,141 +48,13 @@
 			</div>
 			<div class="headershadow"></div>
 			<div class="content">
-				<div class="transactionwrapper">
-					<div class="transtop">
-						<div class="revenue">
-							<div class="startingcontainer">
-								<div><h1>Starting Cash</h1></div>
-								<div><h1>$10,000</h1></div>
-							</div>
-							<div class="revenueheader">
-								<div><h1>Store Revenue (Cash In)</h1></div>
-							</div>
-							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>
-
-
-							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>							<div class="revenuesource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						</div>
-						<div class="deductions">
-							<div class="endingcontainer">
-								<div><h1>Ending Cash</h1></div>
-								<div><h1>$250</h1></div>
-							</div>
-							<div class="deductionsheader">
-								<div><h1>Store Revenue (Cash Out)</h1></div>
-							</div>
-							<div class="deductionssource">
-								<div><p>Source</p></div>
-								<div><p>Input</p></div>
-							</div>
-						</div>
-					</div>
-					<div class="transmid">
-						<div class="revenuecontainer">
-							<div><h1>Total Revenue</h1></div>
-							<div><h1>$11,000</h1></div>
-						</div>
-						<div class="deductionscontainer">
-							<div><h1>Total Deductions</h1></div>
-							<div><h1>$20,750</h1></div>
-						</div>
-					</div>
-					<div class="transbottom">
-						<div><h1>End of Day Balance</h1></div>
-						<div><h1>$0</h1></div>
-					</div>
-				</div>
-				
-				<div class="actionwrapper">
-					<div class="navbuttons">
-						<div><h1>Prev</h1></div>
-						<div><h1>Next</h1></div>
-					</div>
-					
-					<div class="calendar">
-						
-					</div>
-					
-					<div class="savebutton">
-						<div><h1>Save Work</h1></div>
-						<div><p>Last Saved 5 Min Ago</p></div>
-					</div>
-					
-					<div class="submitbutton">
-						<div><h1>Submit Report</h1></div>
-					</div>
-
-				</div>
+				<?php 
+					if(isset($_GET["page"])) {
+						include $_GET["page"] . ".php";
+					} else {
+						include "daily.php";
+					}
+				?>
 			</div>
 		</div>
 	</div>
