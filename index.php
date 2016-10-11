@@ -37,12 +37,12 @@ $sid = session_id();
 						<span>Arrowood Blvd</span>
 					</div>
 					<div>
-						<span>wednesday</span>
-						<span>september 14, 2016</span>
+						<span><?php echo date("l");?></span>
+						<span><?php echo date("F j, Y");?></span>
 					</div>
 					<div>
 						<span>user id</span>
-						<span>kelly</span>
+						<span><?php echo $_SESSION['first_name'];?></span>
 					</div>
 				</div>
 			</div>

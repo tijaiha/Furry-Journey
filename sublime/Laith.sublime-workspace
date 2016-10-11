@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"first",
+				"firstname"
+			],
+			[
+				"last",
+				"lastName"
+			],
+			[
+				"user",
+				"userName"
+			],
+			[
+				"per",
+				"permissions"
+			],
+			[
+				"permission",
+				"permission_name"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
 				"margin",
 				"margin-bottom"
 			],
@@ -71,7 +95,7 @@
 			"file": "/C/wamp64/www/Laith/index.php",
 			"settings":
 			{
-				"buffer_size": 4525,
+				"buffer_size": 1157,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -109,7 +133,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -131,20 +155,25 @@
 	"expanded_folders":
 	[
 		"/C/wamp64/www/Laith",
+		"/C/wamp64/www/Laith/classes",
 		"/C/wamp64/www/Laith/css",
+		"/C/wamp64/www/Laith/includes",
 		"/C/wamp64/www/Laith/sublime"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/users.php",
+		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/wamp64/www/Laith/oldindex.php",
+		"/C/wamp64/www/Laith/daily.php",
+		"/C/wamp64/www/Laith/classes/User.php",
 		"/C/wamp64/www/Laith/.git/.gitignore",
 		"/C/wamp64/www/Laith/Sublime/Laith.sublime-project",
 		"/C/wamp64/www/Laith/index.php",
 		"/C/wamp64/www/Laith/.git/gitignore",
-		"/C/wamp64/www/Laith/oldindex.php",
 		"/C/wamp64/www/Laith/css/reset.css",
 		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/CONFIGURATION/BR/Configuration.bk",
-		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/Laith/includes/tablecols.php",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/saves/Modded Career/persistent.sfs",
@@ -260,10 +289,7 @@
 		"/C/Users/tijai/Zomboid/mods/VorpalWeapons/media/lua/shared/VorpalWeapons.lua",
 		"/C/Users/tijai/Zomboid/mods/SYNPZVanillaPatch/media/lua/client/SYNCanning.lua",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/NearFutureConstruction/Patches/NFConstructionCommunityTechTree.cfg",
-		"/C/Users/tijai/Desktop/PZhydrocraftlab",
-		"/C/Users/tijai/Documents/AHK Scripts/7DTD.ahk",
-		"/C/Users/tijai/Zomboid/mods/loaded.txt",
-		"/C/Users/tijai/Zomboid/mods/MSB_Electrical/media/lua/server/XpSystem/MSB_Electrical_XPSystem.lua"
+		"/C/Users/tijai/Desktop/PZhydrocraftlab"
 	],
 	"find":
 	{
@@ -283,6 +309,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\t\t<",
 			">\n",
 			"}",
 			"{",
@@ -432,15 +459,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4525,
+						"buffer_size": 1157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4198,
-								4198
+								1149,
+								1149
 							]
 						],
 						"settings":
@@ -449,7 +476,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2639.0,
+						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
