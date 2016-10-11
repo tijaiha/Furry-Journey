@@ -2,6 +2,7 @@
 
 require_once 'core/init.php';
 
+
 $db = new DB;
 $query = $db->runQuery("SELECT * FROM permissions");
 $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -14,11 +15,11 @@ $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
 	<?php
 	error_reporting(0);
 
-	$username = $_POST['userName'];
-	$firstname = $_POST['firstName'];
-	$lastname = $_POST['lastName'];
+	$username = escape($_POST['userName']);
+	$firstname = escape($_POST['firstName']);
+	$lastname = escape($_POST['lastName']);
 
-	if($_POST['formSubmit'] == "Submit") {
+	if (!empty($_POST['createSubmit'])) {
 		$error = "";
 
 		if (!$_POST['firstName']) {
@@ -40,11 +41,11 @@ $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
 		if (!$error) {
 
 			$user = [
-			'first_name' => $_POST['firstName'],
-			'last_name' => $_POST['lastName'],
-			'username' => $_POST['userName'],
-			'password' => $_POST['password'],
-			'permissions_fk' => $_POST['role']
+			'first_name' => escape($_POST['firstName']),
+			'last_name' => escape($_POST['lastName']),
+			'username' => escape($_POST['userName']),
+			'password' => escape($_POST['password']),
+			'permissions_fk' => escape($_POST['role'])
 			];
 			//var_dump($user);
 
@@ -65,65 +66,144 @@ $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
 			echo "Required:<br>" . $error;
 		}
 	}
+
+	if (!empty($_POST['editSubmit'])) {
+		
+	}
+
 	?>
 
 	<form action="index.php?page=users" method="post" autocomplete="off">
-		<label for="userName">Username: </label>
-		<input type="text" autocomplete="off" id="userName" name="userName" value=""><br>
-		<label for="password">Password: </label>
-		<input type="text" autocomplete="off" id="password" name="password" value=""><br>
-		<label for="firstName">First Name: </label>
-		<input type="text" autocomplete="off" id="firstName" name="firstName" value=""><br>
-		<label for="lastName">Last Name: </label>
-		<input type="text" autocomplete="off" id="lastName" name="lastName" value=""><br>
-		<label for="role">Role: </label>
-		<select id= "role" name="role"><br>
-			<?php
-			foreach ($permissions as $key => $value) {
-				if($value['permission_name'] == "Clerk") { 
-					echo '<option selected value="' . 
-					$value['id_pk'] . 
-					'">' . 
-					$value['permission_name'] . 
-					'</option>';
-				} else {
-					echo '<option value="' . 
-					$value['id_pk'] . 
-					'">' . 
-					$value['permission_name'] . 
-					'</option>';
-				}
-			}
-			?>
-		</select>
-		<input type="submit" name="formSubmit">
+		<input type="hidden" id="userID" name="userID" value="
 
+		<?php
+				//bring in user id here
+		?>
+
+		">
+		<table>
+			<tr>
+				<td><label for="userActive">Active: </label></td>
+				<td><label for="userName">Username: </label></td>
+				<td><label for="password">Password: </label></td>
+				<td><label for="firstName">First Name: </label></td>
+				<td><label for="lastName">Last Name: </label></td>
+				<td><label for="role">Role: </label></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="userActive" name="userActive" checked>
+				</td>
+				<td>
+					<input type="text" autocomplete="off" id="userName" name="userName" value="
+					
+					<?php
+						//user name
+					?>
+					
+					">
+				</td>
+				<td>
+					<input type="text" autocomplete="off" id="password" name="password" value="
+
+					<?php
+						//user pass
+					?>
+
+					">
+				</td>
+				<td>
+					<input type="text" autocomplete="off" id="firstName" name="firstName" value="
+
+					<?php
+						//user first
+					?>
+
+					">
+				</td>
+				<td>
+					<input type="text" autocomplete="off" id="lastName" name="lastName" value="
+
+					<?php
+						//user last
+					?>
+
+					">
+				</td>
+				<td>
+					<select id= "role" name="role">	
+
+						<?php
+						foreach ($permissions as $key => $value) {
+							if($value['permission_name'] == "Clerk") { 
+								echo '<option selected value="' . 
+								$value['id_pk'] . 
+								'">' . 
+								$value['permission_name'] . 
+								'</option>';
+							} else {
+								echo '<option value="' . 
+								$value['id_pk'] . 
+								'">' . 
+								$value['permission_name'] . 
+								'</option>';
+							}
+						}
+						?>
+
+					</select>
+				</td>
+				<td>
+					<input type="submit" name="createSubmit">
+				</td>
+			</tr>
+			<!-- END OF FORM -->
+
+			<!-- START OF DATABASE -->
+			<?php
+			$db = new DB;
+			$userlist = $db->fetchUsers();
+
+			$btd = "<td><p>";
+			$etd = "</p></td>";
+			
+			foreach ($userlist as $key => $value) {
+
+				echo 
+				'<tr><form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="userID" name="userID" value="' . 
+				$value['id'] . 
+				'">' .
+				$btd . $value['active'] . 
+				$btd . $value['user'] . $etd . 
+				$btd . $etd . 
+				$btd . $value['first'] . $etd . 
+				$btd . $value['last'] . $etd . 
+				$btd . $value['role'] . $etd . 
+				$btd . 
+				'<input type="submit" name="editSubmit" value="Edit">' .
+				$etd . 
+				'</tr></form>';
+
+			}
+
+
+
+			?>
+	<!-- 		<tr>
+				<td><label for="userActive">Active: </label></td>
+				<td><label for="userName">Username: </label></td>
+				<td><label for="password">Password: </label></td>
+				<td><label for="firstName">First Name: </label></td>
+				<td><label for="lastName">Last Name: </label></td>
+				<td><label for="role">Role: </label></td>
+			</tr> -->
+
+
+		</table>
 	</form>
 </div>
 
 <div class="actionwrapper">
-
-	<?php
-	$db = new DB;
-	$userlist = $db->fetchUsers();
-
-	$bdiv = "<div><p>";
-	$ediv = "</p></div>";
-
-	foreach ($userlist as $key => $value) {
-
-		echo 	
-		$bdiv . $value['id'] . $ediv . 
-		$bdiv . $value['user'] . $ediv . 
-		$bdiv . $value['first'] . $ediv . 
-		$bdiv . $value['last'] . $ediv . 
-		$bdiv . $value['role'] . $ediv;
-
-	}
-
-//var_dump($userlist);
-
-	?>
 
 </div>
 

@@ -1,7 +1,10 @@
 <?php
 
 require_once 'core/init.php';
-$sid = session_id();
+
+	if(!isset($_SESSION['user'])) {
+		header('Location: login.php');
+	}
 
 ?>
 
@@ -21,6 +24,8 @@ $sid = session_id();
 		<div class="sidebar">
 			<a href="index.php?page=daily">Daily</a><br>
 			<a href="index.php?page=users">Users</a><br>
+			<a href="index.php?page=logout">Log Out</a><br>
+
 		</div>
 		<div class="contentwrapper">
 			<div class="header">

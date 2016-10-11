@@ -1,26 +1,13 @@
 <?php
 require_once 'core/init.php';
+
 error_reporting(0);
 
-// If it's desired to kill the session, also delete the session cookie.
-// Note: This will destroy the session, and not just the session data!
-if (ini_get("session.use_cookies")) {
-  $params = session_get_cookie_params();
-  setcookie(session_name(), '', time() - 42000,
-    $params["path"], $params["domain"],
-    $params["secure"], $params["httponly"]
-    );
-}
-
-// Finally, destroy the session.
-session_destroy();
-
-session_start();
 if($_POST['formSubmit'] == "Submit") {
-      // username and password sent from form 
+   session_start(); 
 
    $auth = new DB;
-   $user = $auth->login($_POST['username'], $_POST['password']);
+   $user = $auth->login(escape($_POST['username']), escape($_POST['password']));
 
    if (!$user) {
       $error = "Invalid Username or Password.";

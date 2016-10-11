@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"per",
+				"permissions_fk"
+			],
+			[
+				"permissions",
+				"permissions_fk"
+			],
+			[
 				"first",
 				"firstname"
 			],
@@ -14,10 +26,6 @@
 			[
 				"user",
 				"userName"
-			],
-			[
-				"per",
-				"permissions"
 			],
 			[
 				"permission",
@@ -42,10 +50,6 @@
 			[
 				"border",
 				"border-style"
-			],
-			[
-				"_",
-				"_pdo"
 			],
 			[
 				"sess",
@@ -95,7 +99,33 @@
 			"file": "/C/wamp64/www/Laith/index.php",
 			"settings":
 			{
-				"buffer_size": 1157,
+				"buffer_size": 1314,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/wamp64/www/Laith/logout.php",
+			"settings":
+			{
+				"buffer_size": 101,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/wamp64/www/Laith/login.php",
+			"settings":
+			{
+				"buffer_size": 1415,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/wamp64/www/Laith/classes/DB.php",
+			"settings":
+			{
+				"buffer_size": 2755,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -156,12 +186,22 @@
 	[
 		"/C/wamp64/www/Laith",
 		"/C/wamp64/www/Laith/classes",
+		"/C/wamp64/www/Laith/core",
 		"/C/wamp64/www/Laith/css",
 		"/C/wamp64/www/Laith/includes",
 		"/C/wamp64/www/Laith/sublime"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/logout.php",
+		"/C/wamp64/www/Laith/core/init.php",
+		"/C/wamp64/www/login/classes/Session.php",
+		"/C/wamp64/www/Laith/classes/Session.php",
+		"/C/wamp64/www/login/functions/sanitize.php",
+		"/C/wamp64/www/login/classes/User.php",
+		"/C/wamp64/www/login/login.php",
+		"/C/wamp64/www/login/core/init.php",
+		"/C/wamp64/www/Laith/session.php",
 		"/C/wamp64/www/Laith/users.php",
 		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/oldindex.php",
@@ -174,14 +214,12 @@
 		"/C/wamp64/www/Laith/css/reset.css",
 		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/backupHistoryInfo.xml",
 		"/C/Users/tijai/Documents/samsung/Kies3/backup/SM-G900A/SM-G900A_19293912629/SM-G900A_20160930113626/CONFIGURATION/BR/Configuration.bk",
-		"/C/wamp64/www/Laith/core/init.php",
 		"/C/wamp64/www/Laith/includes/tablecols.php",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/saves/Modded Career/persistent.sfs",
 		"/C/www/login/classes/DB.php",
 		"/C/wamp64/bin/apache/apache2.4.18/conf/httpd.conf",
 		"/C/wamp64/www/login/classes/DB.php",
 		"/C/wamp64/www/login/index.php",
-		"/C/wamp64/www/login/core/init.php",
 		"/C/wamp64/www/Laith/classes/Config.php",
 		"/C/wamp64/www/login/classes/Hash.php",
 		"/C/wamp64/www/login/classes/Validate.php",
@@ -189,11 +227,8 @@
 		"/C/wamp64/www/Laith/classes/db.php",
 		"/C/wamp64/bin/apache/apache2.4.18/conf/extra/httpd-vhosts.conf",
 		"/C/Users/tijai/Google Drive/Projects/Laith/index.php",
-		"/C/wamp64/www/login/classes/User.php",
 		"/C/wamp64/www/login/classes/Input.php",
 		"/C/wamp64/www/login/classes/Token.php",
-		"/C/wamp64/www/login/classes/Session.php",
-		"/C/wamp64/www/login/functions/sanitize.php",
 		"/C/wamp64/www/login/.idea/scopes/scope_settings.xml",
 		"/C/wamp64/www/login/.idea/deployment.xml",
 		"/C/wamp64/www/portfolio/index.html",
@@ -285,11 +320,7 @@
 		"/C/Users/tijai/Zomboid/mods/SYNPZVanillaPatch/media/lua/server/XpSystem/SYNSkillBook.lua",
 		"/C/Users/tijai/AppData/Local/Temp/Temp1_BasicProfession&amp;TraitTemplate.zip/BasicProfession&TraitTemplate/media/lua/client/Professions/ProfessionTraitTemplate.lua",
 		"/C/Users/tijai/AppData/Local/Temp/Temp1_CookingTrait.zip/CookingTrait/media/lua/shared/NPCs/CookTrait.lua",
-		"/C/Users/tijai/Zomboid/mods/HeroicWeapons/media/lua/shared/Heroic Weapons Table.lua",
-		"/C/Users/tijai/Zomboid/mods/VorpalWeapons/media/lua/shared/VorpalWeapons.lua",
-		"/C/Users/tijai/Zomboid/mods/SYNPZVanillaPatch/media/lua/client/SYNCanning.lua",
-		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/GameData/NearFutureConstruction/Patches/NFConstructionCommunityTechTree.cfg",
-		"/C/Users/tijai/Desktop/PZhydrocraftlab"
+		"/C/Users/tijai/Zomboid/mods/HeroicWeapons/media/lua/shared/Heroic Weapons Table.lua"
 	],
 	"find":
 	{
@@ -300,6 +331,8 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\wamp64\\www\\Laith\\*.*",
+			"C:\\wamp64\\www\\Laith",
 			"",
 			"C:\\Games\\SteamLibrary\\steamapps\\common\\ProjectZomboid\\media"
 		]
@@ -309,6 +342,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"session_start(); ",
 			"\t\t<",
 			">\n",
 			"}",
@@ -459,15 +493,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1157,
+						"buffer_size": 1314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1149,
-								1149
+								573,
+								573
 							]
 						],
 						"settings":
@@ -476,10 +510,97 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 468.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/wamp64/www/Laith/logout.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/wamp64/www/Laith/login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/wamp64/www/Laith/classes/DB.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1352,
+								1352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

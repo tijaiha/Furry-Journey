@@ -38,10 +38,20 @@ Class DB {
 		} catch(PDOException $e) {
 			$error = $e->getMessage();
 		}
+
       $username = $db->quote($user);
       $password = $db->quote($pass);
 
-		$result = $db->prepare("SELECT id_pk FROM user WHERE username = ? and password = ?");
+		$result = $db->prepare("
+
+								SELECT id_pk, user_active 
+								FROM user 
+								WHERE user_active = 1 
+								AND username = lower(?) 
+								AND password = ?
+
+							");
+
 		$result->bindParam(1, $user);
 		$result->bindParam(2, $pass);
 		$result->execute();
@@ -52,10 +62,17 @@ Class DB {
 
 		if($row) {
 			$_SESSION['error'] = "";
-			$query = $db->query("SELECT first_name, permissions_fk FROM user WHERE id_pk = '$id'");
+			$query = $db->query("
+							
+								SELECT first_name, permissions_fk 
+								FROM user 
+								WHERE id_pk = '$id'
+
+							");
+
 			$name = $query->fetch(PDO::FETCH_ASSOC);
 
-			$_SESSION['login_user'] = $username;
+			$_SESSION['user'] = $username;
 			$_SESSION['first_name'] = $name['first_name'];
 			$_SESSION['role'] = $name['permissions_fk'];
 			header('location: index.php');
@@ -70,10 +87,11 @@ public function fetchUsers() {
 	$result = $query->query("
 
 		SELECT 	user.id_pk as id,
-		user.first_name as first, 
-		user.last_name as last, 
-		user.username as user, 
-		permissions.permission_name as role
+				user.first_name as first, 
+				user.last_name as last, 
+				user.username as user, 
+				user.user_active as active,
+				permissions.permission_name as role
 		FROM user
 		LEFT JOIN permissions
 		ON user.permissions_fk=permissions.id_pk;
@@ -87,7 +105,14 @@ public function userExists($user){
 
 	try {
 		$query = $this->connect();
-		$result = $query->prepare("SELECT username FROM user WHERE username LIKE ?");
+		$result = $query->prepare("
+
+								SELECT username 
+								FROM user 
+								WHERE username 
+								LIKE ?
+
+							");
 
 
 	} catch(Exception $e) {
@@ -105,6 +130,22 @@ public function userExists($user){
 		return false;
 	}
 }
+
+
+/*		insert(table, array) Requires table and an associative 
+		array using column name as the key.
+
+		Example:
+
+		array(
+			'first_name' => NULL,
+			'last_name' => NULL,
+			'username' => NULL,
+			'password' => NULL,
+			'user_permissions_fk' => NULL
+			);
+
+*/
 
 public function insert($table, $data) {
 
