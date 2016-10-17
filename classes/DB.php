@@ -2,7 +2,7 @@
 
 Class DB {
 
-	private function connect(){
+	public function connect(){
 
 		$dsn = 'mysql:host=127.0.0.1;dbname=reporting';
 		$username = 'reportingdb';
