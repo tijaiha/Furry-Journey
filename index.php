@@ -23,7 +23,8 @@ if(!isset($_SESSION['user'])) {
 	<div class="pagewrapper">
 		<div class="sidebar">
 			<a href="index.php?page=daily">Daily</a><br>
-			<a href="index.php?page=users">Users</a><br>
+			<?php if($_SESSION['role'] == 1){
+				echo '<a href="index.php?page=users">Users</a><br>';}?>
 			<a href="index.php?page=logout">Log Out</a><br>
 
 		</div>

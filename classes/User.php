@@ -32,58 +32,62 @@ Class User {
 
 		if (is_int($init)) {
 			$sql = "SELECT id_pk as ID,
-					first_name as fName,
-					last_name as lName,
-					username as uName,
-					password as uPass,
-					permissions_fk as uPerm,
-					user_active as uActive
-					FROM user
-					WHERE id_pk = " . $init;
+			first_name as fName,
+			last_name as lName,
+			username as uName,
+			password as uPass,
+			permissions_fk as uPerm,
+			user_active as uActive
+			FROM user
+			WHERE id_pk = " . $init;
 			$query = $db->prepare($sql);
 			$query->execute();
 
-			$this->result = $query->fetch(PDO::FETCH_ASSOC); 
+			$results = $query->fetch(PDO::FETCH_ASSOC);
+			
+			if ($results['uName']) {
+				$this->result = True;
+			} else {
+				$this->result = False;
+			}
 		} 
 
 		if (is_string($init)) {
-			$query = $db->prepare("
-				SELECT id_pk as ID,
-				first_name as fName,
-				last_name as lName,
-				username as uName,
-				password as uPass,
-				permissions_fk as uPerm,
-				user_active as uActive
-				FROM user
-				WHERE username = ?");
-			$query->bindValue(1, $init);
+			$sql = 'SELECT id_pk as ID,
+			first_name as fName,
+			last_name as lName,
+			username as uName,
+			password as uPass,
+			permissions_fk as uPerm,
+			user_active as uActive
+			FROM user
+			WHERE username = "' . $init . '"';
+			$query = $db->prepare($sql);
 			$query->execute();
-
 
 			$results = $query->fetch(PDO::FETCH_ASSOC); 
 
 			if ($results['ID']) {
-				$this->result = $results;
+				$this->result = True;
 			} else {
-				$this->result = null;
+				$this->result = False;
 			}
 		}
 
 		if (is_null($init)) {
-			$this->result = null;
+			$this->result = False;
 			return False;
 			exit();
 		} 
 
 		if ($this->result) {
-			$this->ID = $result['ID'];
-			$this->fName = $result['fName'];
-			$this->lName = $result['lName'];
-			$this->uName = $result['uName'];
-			$this->uPass = $result['uPass'];
-			$this->uPerm = $result['uPerm'];
-			$this->uActive = $result['uActive'];
+			$this->ID = $results['ID'];
+			$this->fName = $results['fName'];
+			$this->lName = $results['lName'];
+			$this->uName = $results['uName'];
+			$this->uPass = $results['uPass'];
+			$this->uPerm = $results['uPerm'];
+			$this->uActive = $results['uActive'];
 		}
 	}
 
@@ -97,38 +101,27 @@ Class User {
 		}
 
 		if($this->result) {
-			$sql = "UPDATE user
+			$query = $db->prepare("UPDATE user SET first_name = :fname, last_name = :lname, username = :uname, password = :pass, permissions_fk = :perm, user_active = :active WHERE id_pk = :id");
+			$query->bindValue(':fname',$this->fName);
+			$query->bindValue(':lname',$this->lName);
+			$query->bindValue(':uname',$this->uName);
+			$query->bindValue(':pass',$this->uPass);
+			$query->bindValue(':perm',$this->uPerm);
+			$query->bindValue(':active',$this->uActive);
+			$query->bindValue(':id',$this->ID);
 
-					SET 
-					first_name = " . $this->fName . ",
-					last_name = " . $this->lName . ",
-					username = " . $this->uName . ",
-					password = " . $this->uPass . ",
-					permissions_fk = " . $this->uPerm . ",
-					user_active = " . $this->uActive . "
 
-					WHERE
-					id_pk = " . $this->ID . "
-					";
+		} elseif (isset($this->fName, $this->lName, $this->uName, $this->uPass, $this->uPerm, $this->uActive)) {
 
-		} else {
-			$sql = "INSERT INTO user (
-					first_name,
-					last_name,
-					username,
-					password,
-					permissions_fk,
-					user_active)
-
-					VALUES (
-					$this->fName, 
-					$this->lName, 
-					$this->uName, 
-					$this->uPass, 
-					$this->uPerm, 
-					$this->uActive)";
+			$query = $db->prepare("INSERT INTO user (first_name, last_name, username, password, permissions_fk, user_active) VALUES (:fname, :lname, :uname, :pass, :perm, :active)");
+			$query->bindValue(':fname',$this->fName);
+			$query->bindValue(':lname',$this->lName);
+			$query->bindValue(':uname',$this->uName);
+			$query->bindValue(':pass',$this->uPass);
+			$query->bindValue(':perm',$this->uPerm);
+			$query->bindValue(':active',$this->uActive);
 		}
-		$query = $db->prepare($sql);
+
 		$query->execute();
 	}
 
@@ -161,6 +154,10 @@ Class User {
 
 	public function GetActive(){
 		return $this->uActive;
+	}
+
+	public function GetResult(){
+		return $this->result;
 	}
 
 

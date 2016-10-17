@@ -46,7 +46,7 @@ Class DB {
 
 								SELECT id_pk, user_active 
 								FROM user 
-								WHERE user_active = 1 
+								WHERE user_active = 'on' 
 								AND username = lower(?) 
 								AND password = ?
 
