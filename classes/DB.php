@@ -33,24 +33,20 @@ Class DB {
 
 	public function login($user, $pass) {
 
-		try { 
-			$db = $this->connect();
-		} catch(PDOException $e) {
-			$error = $e->getMessage();
-		}
+		$db = $this->connect();
 
-      $username = $db->quote($user);
-      $password = $db->quote($pass);
+		$username = $db->quote($user);
+		$password = $db->quote($pass);
 
 		$result = $db->prepare("
 
-								SELECT id_pk, user_active 
-								FROM user 
-								WHERE user_active = 'on' 
-								AND username = lower(?) 
-								AND password = ?
+			SELECT id_pk, user_active 
+			FROM user 
+			WHERE user_active = 1 
+			AND username = lower(?) 
+			AND password = ?
 
-							");
+			");
 
 		$result->bindParam(1, $user);
 		$result->bindParam(2, $pass);
@@ -63,73 +59,75 @@ Class DB {
 		if($row) {
 			$_SESSION['error'] = "";
 			$query = $db->query("
-							
-								SELECT first_name, permissions_fk 
-								FROM user 
-								WHERE id_pk = '$id'
 
-							");
+				SELECT first_name, last_name, permissions_fk, id_pk 
+				FROM user 
+				WHERE id_pk = '$id'
+
+				");
 
 			$name = $query->fetch(PDO::FETCH_ASSOC);
 
 			$_SESSION['user'] = $username;
 			$_SESSION['first_name'] = $name['first_name'];
+			$_SESSION['last_name'] = $name['last_name'];
 			$_SESSION['role'] = $name['permissions_fk'];
+			$_SESSION['user_id'] = $name['id_pk'];
 			header('location: index.php');
 		}else {
 			return false;
 		}
 	}
 
-
-public function fetchUsers() {
-	$query = $this->connect();
-	$result = $query->query("
-
-		SELECT 	user.id_pk as id,
-				user.first_name as first, 
-				user.last_name as last, 
-				user.username as user, 
-				user.user_active as active,
-				permissions.permission_name as role
-		FROM user
-		LEFT JOIN permissions
-		ON user.permissions_fk=permissions.id_pk;
-
-		");
-	$return = $result->fetchAll(PDO::FETCH_ASSOC);
-	return $return;
-}
-
-public function userExists($user){
-
-	try {
+	public function fetchUsers() {
 		$query = $this->connect();
-		$result = $query->prepare("
+		$result = $query->query("
 
-								SELECT username 
-								FROM user 
-								WHERE username 
-								LIKE ?
+			SELECT 	user.id_pk as id,
+			user.first_name as first, 
+			user.last_name as last, 
+			user.username as user, 
+			user.user_active as active,
+			permissions.permission_name as role
+			FROM user
+			LEFT JOIN permissions
+			ON user.permissions_fk=permissions.id_pk
+			ORDER BY user.user_active DESC, user.permissions_fk ASC, user.first_name ASC;
 
-							");
-
-
-	} catch(Exception $e) {
-
-		die($e->getMessage());
-
+			");
+		$return = $result->fetchAll(PDO::FETCH_ASSOC);
+		return $return;
 	}
 
-	$result->bindParam(1, $user);
-	$result->execute();
-	$return = $result->fetchAll(PDO::FETCH_ASSOC);
-	if ($return[0]['username']) {
-		return true;
-	} else {
-		return false;
+	public function userExists($user){
+
+		try {
+			$query = $this->connect();
+			$result = $query->prepare("
+
+				SELECT username 
+				FROM user 
+				WHERE username 
+				LIKE ?
+
+				");
+
+
+		} catch(Exception $e) {
+
+			die($e->getMessage());
+
+		}
+
+		$result->bindParam(1, $user);
+		$result->execute();
+		$return = $result->fetchAll(PDO::FETCH_ASSOC);
+		if ($return[0]['username']) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-}
 
 
 /*		insert(table, array) Requires table and an associative 
@@ -147,48 +145,48 @@ public function userExists($user){
 
 */
 
-public function insert($table, $data) {
+			public function insert($table, $data) {
 
-	$query = $this->connect();
-	$keys = array_keys($data);
-	$sql = "INSERT INTO " . $table . " (";
-	$counter = count($keys);
-	$i = 1;
+				$query = $this->connect();
+				$keys = array_keys($data);
+				$sql = "INSERT INTO " . $table . " (";
+				$counter = count($keys);
+				$i = 1;
 
-	foreach ($keys as $value) {
-		if($i < $counter) {
-			$sql .= $value . ", ";
-			$i++;
-		} else {
-			$sql .= $value;
-		}
-	}
+				foreach ($keys as $value) {
+					if($i < $counter) {
+						$sql .= $value . ", ";
+						$i++;
+					} else {
+						$sql .= $value;
+					}
+				}
 
-	$sql .= ") VALUES (";
-	$i = 1;
+				$sql .= ") VALUES (";
+				$i = 1;
 
-	foreach ($data as $value) {
-		if($i < $counter) {
-			$sql .= "?, ";
-			$i++;
-		} else {
-			$sql .= "?";
-		}
-	}
+				foreach ($data as $value) {
+					if($i < $counter) {
+						$sql .= "?, ";
+						$i++;
+					} else {
+						$sql .= "?";
+					}
+				}
 
-	$i = 1;
-	$sql .= ")";
+				$i = 1;
+				$sql .= ")";
 		//echo $sql;
-	$result = $query->prepare($sql);
+				$result = $query->prepare($sql);
 
-	foreach ($data as $value) {
-		$result->bindValue($i, $value);
-		$i++;
-	}
+				foreach ($data as $value) {
+					$result->bindValue($i, $value);
+					$i++;
+				}
 
-	$result->execute();
+				$result->execute();
 
-}
-}
+			}
+		}
 
 

@@ -7,15 +7,29 @@ body,html {
 	padding: 0px auto;
 }
 
-p {
+a,p,h1,h2,h3,h4,h5,h6{
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+a {
+	color: #fff;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #ff9110;
+}
+
+p {
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: capitalize;
 }
 
 h1 {
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 22px;
 	font-weight: bold;
 	color: #fff;
@@ -52,17 +66,24 @@ h1 {
 
 /*--------------------------------------------------------------*/
 
-.sidebar:hover {
-	min-width: 160px;
-	/*background-color: grey;*/
-}
-
 .sidebar {
 	min-width: 40px;
 	position: relative;
     z-index: 1;
 	background-color: #767171;
 }
+
+.sidebar div {
+	display: none;
+}
+
+.sidebar:hover div {
+	display: block;
+	min-width: 160px;
+	/*background-color: grey;*/
+}
+
+
 
 .contentwrapper {
 	/*background-color: red;*/
@@ -477,4 +498,15 @@ h1 {
 .submitbutton {
 	display: flex;
 	background-color: green;
+}
+
+
+/*--------------------------------------------------------------*/
+
+.active {
+	background-color: lightgreen;
+}
+
+.inactive {
+	background-color: pink;
 }

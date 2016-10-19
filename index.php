@@ -1,10 +1,8 @@
 <?php
 
 require_once 'core/init.php';
-
-if(!isset($_SESSION['user'])) {
-		header('Location: login.php');
-	}
+require_once 'functions/ui.php';
+require_once 'includes/loggedin.php';
 
 ?>
 
@@ -22,11 +20,7 @@ if(!isset($_SESSION['user'])) {
 <body>
 	<div class="pagewrapper">
 		<div class="sidebar">
-			<a href="index.php?page=daily">Daily</a><br>
-			<?php if($_SESSION['role'] == 1){
-				echo '<a href="index.php?page=users">Users</a><br>';}?>
-			<a href="index.php?page=logout">Log Out</a><br>
-
+			<div><?php CreateMenu($_SESSION['role'], $_SESSION['user_id']);?></div>
 		</div>
 		<div class="contentwrapper">
 			<div class="header">
@@ -34,21 +28,21 @@ if(!isset($_SESSION['user'])) {
 					<img src="images/logo.png"/>
 				</div>
 				<div class="pagetitle">
-					<h3>Daily Balance Sheet</h3>
+					<h3><?php SetPageTitle($_GET["page"]);?></h3>
 				</div>
 				<div class="split"></div>
 				<div class="userinfo">
 					<div>
-						<span>store #1</span>
-						<span>Arrowood Blvd</span>
+						<span><?php if (isset($_GET['s'])) {echo "store #" . $_GET['s'];}?></span>
+						<span><?php echo StoreName($_GET['s']);?></span>
 					</div>
 					<div>
 						<span><?php echo date("l");?></span>
 						<span><?php echo date("F j, Y");?></span>
 					</div>
 					<div>
-						<span>user id</span>
-						<span><?php echo $_SESSION['first_name'];?></span>
+						<span>user</span>
+						<span><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name'];?></span>
 					</div>
 				</div>
 			</div>

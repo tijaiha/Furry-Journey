@@ -1,3 +1,15 @@
+<?php 
+require_once 'core/init.php';
+require_once 'functions/ui.php';
+require_once 'includes/loggedin.php';
+
+StoreAuth();
+if (!in_array($_GET['s'], $_SESSION['storeauth'])) {
+	//echo $_SESSION['storeauth'][0];
+	header('Location: index.php?page=daily&s=' . $_SESSION['storeauth'][0]);
+}
+?>
+
 <div class="transactionwrapper">
 					<div class="transtop">
 						<div class="revenue">

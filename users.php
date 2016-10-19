@@ -1,6 +1,7 @@
 <?php
 
 require_once 'core/init.php';
+require_once 'includes/loggedin.php';
 
 
 $db = new DB;
@@ -46,6 +47,12 @@ $editResult = "";
 		if (!$user->GetResult){
 			if (!$error) {
 
+				if ($_POST['userActive']) {
+					$_POST['userActive'] = 1;
+				} else {
+					$_POST['userActive'] = 0;
+				}
+
 				$user->SetActive($_POST['userActive']);
 				$user->SetFirst(escape($_POST['firstName']));
 				$user->SetLast(escape($_POST['lastName']));
@@ -86,17 +93,17 @@ $editResult = "";
 			<tr>
 				<td>
 					<input type="checkbox" id="userActive" name="userActive" <?php
-						if (!empty($_POST['editSubmit'])) {
-							if($user->GetActive() == "on"){
-								echo "checked";
-							} else {
-								echo "";
-							}
-						} else {
+					if (!empty($_POST['editSubmit'])) {
+						if($user->GetActive() == 1){
 							echo "checked";
-						}					
+						} else {
+							echo "";
+						}
+					} else {
+						echo "checked";
+					}					
 
-					 ?>>
+					?>>
 				</td>
 				<td>
 					<input type="text" autocomplete="off" id="userName" name="userName" value="<?php
@@ -173,49 +180,59 @@ $editResult = "";
 								}
 							}
 						}
-					?>
+						?>
 
-				</select>
-			</td>
-			<td>
-				<input type="submit" name="createSubmit">
-			</td>
-		</tr>
-		<!-- END OF FORM -->
+					</select>
+				</td>
+				<td>
+					<input type="submit" name="createSubmit">
+				</td>
+			</tr>
+			<!-- END OF FORM -->
 
-		<!-- PULL FROM DATABASE -->
-		<?php
-		$db = new DB;
-		$userlist = $db->fetchUsers();
+			<!-- PULL FROM DATABASE -->
+			<?php
+			$db = new DB;
+			$userlist = $db->fetchUsers();
 
-		$btd = "<td><p>";
-		$etd = "</p></td>";
+			$btd = "<td><p>";
+			$etd = "</p></td>";
 
 			//var_dump($userlist);
 
-		foreach ($userlist as $key => $value) {
 
-			echo 
-			'<tr><form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="userID" name="userID" value="' . $value['id'] . '">' .
-			$btd . $value['active'] . 
-			$btd . $value['user'] . $etd . 
-			$btd . $etd . 
-			$btd . $value['first'] . $etd . 
-			$btd . $value['last'] . $etd . 
-			$btd . $value['role'] . $etd . 
-			$btd . 
-			'<input type="submit" name="editSubmit" value="Edit">' .
-			$etd . 
-			'</form></tr>';
+			foreach ($userlist as $key => $value) {
+				
+				if ($value['active'] == 1) {
+					$value['active'] = "Active";
+					$row = '<tr class="active">';
+				} else {
+					$value['active'] = "Inactive";
+					$row = '<tr class="inactive">';
+				}
 
-		}
+				echo 
+				$row . 
+				'<form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="userID" name="userID" value="' . $value['id'] . '">' .
+				$btd . $value['active'] . 
+				$btd . $value['user'] . $etd . 
+				$btd . $etd . 
+				$btd . $value['first'] . $etd . 
+				$btd . $value['last'] . $etd . 
+				$btd . $value['role'] . $etd . 
+				$btd . 
+				'<input type="submit" name="editSubmit" value="Edit">' .
+				$etd . 
+				'</form></tr>';
+
+			}
 
 
 
-		?>
+			?>
 
-	</table>
-</form>
+		</table>
+	</form>
 </div>
 
 <div class="actionwrapper">
