@@ -4,7 +4,7 @@ require_once 'functions/ui.php';
 require_once 'includes/loggedin.php';
 
 StoreAuth();
-if (!in_array($_GET['s'], $_SESSION['storeauth'])) {
+if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 	//echo $_SESSION['storeauth'][0];
 	header('Location: index.php?page=daily&s=' . $_SESSION['storeauth'][0]);
 }

@@ -130,63 +130,65 @@ Class DB {
 	}
 
 
-/*		insert(table, array) Requires table and an associative 
-		array using column name as the key.
+	public function FetchStores() {
 
-		Example:
+		$db = $this->connect();
 
-		array(
-			'first_name' => NULL,
-			'last_name' => NULL,
-			'username' => NULL,
-			'password' => NULL,
-			'user_permissions_fk' => NULL
-			);
+		$sql = "SELECT 
+		id_pk as id, 
+		store_name as name, 
+		store_active as active 
+		FROM store";
 
-*/
+		$query = $db->query($sql);
+		$results = $query->fetchAll(PDO::FETCH_ASSOC);
 
-			public function insert($table, $data) {
+		return $results;
 
-				$query = $this->connect();
-				$keys = array_keys($data);
-				$sql = "INSERT INTO " . $table . " (";
-				$counter = count($keys);
-				$i = 1;
+	}
 
-				foreach ($keys as $value) {
-					if($i < $counter) {
-						$sql .= $value . ", ";
-						$i++;
-					} else {
-						$sql .= $value;
-					}
-				}
+	public function insert($table, $data) {
 
-				$sql .= ") VALUES (";
-				$i = 1;
+		$query = $this->connect();
+		$keys = array_keys($data);
+		$sql = "INSERT INTO " . $table . " (";
+		$counter = count($keys);
+		$i = 1;
 
-				foreach ($data as $value) {
-					if($i < $counter) {
-						$sql .= "?, ";
-						$i++;
-					} else {
-						$sql .= "?";
-					}
-				}
-
-				$i = 1;
-				$sql .= ")";
-		//echo $sql;
-				$result = $query->prepare($sql);
-
-				foreach ($data as $value) {
-					$result->bindValue($i, $value);
-					$i++;
-				}
-
-				$result->execute();
-
+		foreach ($keys as $value) {
+			if($i < $counter) {
+				$sql .= $value . ", ";
+				$i++;
+			} else {
+				$sql .= $value;
 			}
 		}
+
+		$sql .= ") VALUES (";
+		$i = 1;
+
+		foreach ($data as $value) {
+			if($i < $counter) {
+				$sql .= "?, ";
+				$i++;
+			} else {
+				$sql .= "?";
+			}
+		}
+
+		$i = 1;
+		$sql .= ")";
+		//echo $sql;
+		$result = $query->prepare($sql);
+
+		foreach ($data as $value) {
+			$result->bindValue($i, $value);
+			$i++;
+		}
+
+		$result->execute();
+
+	}
+}
 
 

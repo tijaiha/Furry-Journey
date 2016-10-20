@@ -11,7 +11,7 @@ require_once 'includes/loggedin.php';
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-
+	<title>Argus Check Cashing - <?php SetPageTitle($_GET["page"]);?></title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/styles.css">
 

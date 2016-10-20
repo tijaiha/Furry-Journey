@@ -93,12 +93,8 @@ Class User {
 
 	public function WriteUser() {
 
-		try {
 			$db = new DB;
 			$db = $db->connect();
-		} catch (EXCEPTION $e) {
-			echo "Unable to connect to the database.";
-		}
 
 		if($this->result) {
 			$query = $db->prepare("UPDATE user SET first_name = :fname, last_name = :lname, username = :uname, password = :pass, permissions_fk = :perm, user_active = :active WHERE id_pk = :id");

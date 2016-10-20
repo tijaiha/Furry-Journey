@@ -503,10 +503,12 @@ h1 {
 
 /*--------------------------------------------------------------*/
 
+/* database list items */
 .active {
-	background-color: lightgreen;
+
 }
 
+/* database list items */
 .inactive {
-	background-color: pink;
+
 }
