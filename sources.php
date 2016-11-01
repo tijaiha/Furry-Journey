@@ -28,6 +28,7 @@ require_once 'functions/ui.php';
 		// THROW ERROR IF source EXISTS!
 		//
 
+		var_dump($source->GetID());
 
 		// If there are no results with the source name
 		if (!$source->GetID()){
@@ -51,7 +52,13 @@ require_once 'functions/ui.php';
 				$source->WriteSource();
 
 			}
-		} 
+		} else {
+			$source->SetActive($_POST['sourceActive']);
+			$source->SetName(escape($_POST['sourceName']));
+
+			// Write the source to database
+			$source->WriteSource();
+		}
 
 
 	}

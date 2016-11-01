@@ -81,7 +81,7 @@ Class Source {
 			$query->bindValue(':sactive',$this->sourceActive);
 			$query->bindValue(':id',$this->sourceID);
 
-		} elseif (isset($this->sourceName, $this->sourceActive)) {
+		} else {
 
 			$query = $db->prepare("INSERT INTO source (source_name, source_active) VALUES (:sname, :sactive)");
 			$query->bindValue(':sname',$this->sourceName);

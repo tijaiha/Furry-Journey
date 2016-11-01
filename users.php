@@ -8,13 +8,13 @@ $db = new DB;
 $query = $db->runQuery("SELECT * FROM permissions");
 $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
 $editResult = "";
-
+$editing = NULL;
 ?>
 
 <div class="transactionwrapper">
 
 	<?php
-	//error_reporting(0);
+	error_reporting(0);
 
 	if (!empty($_POST['createSubmit'])) {
 
@@ -36,41 +36,72 @@ $editResult = "";
 			$error .= "Password";
 		}
 
-		$user = new User(escape($_POST['userName']));
+		if (!$error && !$editing) {
 
-		// User exists
-		if ($user->GetResult){
+			$user = new User(escape($_POST['userName']));
 
-		}
-
-		// User does not exist
-		if (!$user->GetResult){
-			if (!$error) {
-
-				if ($_POST['userActive']) {
-					$_POST['userActive'] = 1;
-				} else {
-					$_POST['userActive'] = 0;
-				}
-
-				$user->SetActive($_POST['userActive']);
-				$user->SetFirst(escape($_POST['firstName']));
-				$user->SetLast(escape($_POST['lastName']));
-				$user->SetUser(escape($_POST['userName']));
-				$user->SetPass(escape($_POST['password']));
-				$user->SetPerm(escape($_POST['role']));
-				$user->WriteUser();
-
+			if ($_POST['userActive']) {
+				$_POST['userActive'] = 1;
+			} else {
+				$_POST['userActive'] = 0;
 			}
+
+			$user->SetActive($_POST['userActive']);
+			$user->SetFirst(escape($_POST['firstName']));
+			$user->SetLast(escape($_POST['lastName']));
+			$user->SetUser(escape($_POST['userName']));
+			$user->SetPass(escape($_POST['password']));
+			$user->SetPerm(escape($_POST['role']));
+			$user->WriteUser();
+
 		}
-
-
-
-
 	}
 
 	if (!empty($_POST['editSubmit'])) {
 		$user = new User((int) $_POST['userID']);
+		$editing = True;
+	}
+
+	if (!empty($_POST['updateSubmit'])) {
+		
+		$error = "";
+
+		if (!$_POST['firstName']) {
+			$error .= "First Name";
+		}
+
+		if (!$_POST['lastName']) {
+			$error .= "Last Name";
+		}
+
+		if (!$_POST['userName']) {
+			$error .= "Username";
+		}
+
+		if (!$_POST['password']) {
+			$error .= "Password";
+		}
+
+		if (!$error && $editing) {
+
+			$user = new User(escape($_POST['userID']));
+
+			if ($_POST['userActive']) {
+				$_POST['userActive'] = 1;
+			} else {
+				$_POST['userActive'] = 0;
+			}
+
+			$user->SetActive($_POST['userActive']);
+			$user->SetFirst(escape($_POST['firstName']));
+			$user->SetLast(escape($_POST['lastName']));
+			$user->SetUser(escape($_POST['userName']));
+			$user->SetPass(escape($_POST['password']));
+			$user->SetPerm(escape($_POST['role']));
+			$user->WriteUser();
+
+		}
+		var_dump($user);
 	}
 
 	?>
@@ -185,7 +216,11 @@ $editResult = "";
 					</select>
 				</td>
 				<td>
-					<input type="submit" name="createSubmit">
+					<?php if(!$editing) {
+						echo '<input type="submit" name="createSubmit" value="Create">';
+					} else {
+						echo '<input type="submit" name="updateSubmit" value="Update">';
+					}?>
 				</td>
 			</tr>
 			<!-- END OF FORM -->
