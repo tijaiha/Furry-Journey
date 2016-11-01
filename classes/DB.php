@@ -147,6 +147,23 @@ Class DB {
 
 	}
 
+	public function FetchSources() {
+
+		$db = $this->connect();
+
+		$sql = "SELECT 
+		id_pk as id, 
+		source_name as name, 
+		source_active as active 
+		FROM source";
+
+		$query = $db->query($sql);
+		$results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+		return $results;
+
+	}
+
 	public function insert($table, $data) {
 
 		$query = $this->connect();
