@@ -3,8 +3,8 @@
 
 body,html {
 	height:  100%;
-	margin:  0px auto;
-	padding: 0px auto;
+	margin:  0 auto;
+	padding: 0 auto;
 }
 
 a,p,h1,h2,h3,h4,h5,h6{
@@ -30,9 +30,9 @@ p {
 }
 
 h1 {
+	color: #fff;
 	font-size: 22px;
 	font-weight: bold;
-	color: #fff;
 }
 
 .revenuecontainer div h1, .deductionscontainer div h1,
@@ -41,36 +41,36 @@ h1 {
 }
 
 .div {
-	box-sizing: border-box;
+	border-color: black;
 	border-style: solid;
 	border-width: 1px;
-	border-color: black;
+	box-sizing: border-box;
 }
 
 .span {
-	box-sizing: border-box;
+	border-color: red;
 	border-style: solid;
 	border-width: 1px;
-	border-color: red;
+	box-sizing: border-box;
 }
 
 .pagewrapper {
-	width: 100%;
-	height: auto;
-	min-height: 100%;
-	margin:  0px;
-	padding: 0px;
 	display: flex;
 	flex-direction: row;
+	height: auto;
+	margin:  0px;
+	min-height: 100%;
+	padding: 0px;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------*/
 
 .sidebar {
+	background-color: #767171;
 	min-width: 40px;
 	position: relative;
     z-index: 1;
-	background-color: #767171;
 }
 
 .sidebar div {
@@ -78,31 +78,30 @@ h1 {
 }
 
 .sidebar:hover div {
+	/*background-color: grey;*/
 	display: block;
 	min-width: 160px;
-	/*background-color: grey;*/
 }
 
 
 
 .contentwrapper {
 	/*background-color: red;*/
-	width: 100%;
 	display: flex;
 	flex-direction: column;
-
+	width: 100%;
 }
 
 /*--------------------------------------------------------------*/
 
 .header {
-	height: 122px;
-	position: relative;
-	z-index: 0;
 	/*background-color: green;*/
 	display:flex;
 	flex-direction: row;
+	height: 122px;
 	justify-content: space-between;
+	position: relative;
+	z-index: 0;
 }
 
 .header div {
@@ -112,41 +111,40 @@ h1 {
 
 .header div:nth-child(4) {
 	/*background-color: blue;*/
-	width: 275px;
 	flex-grow: 0;
+	width: 275px;
 }
 
 .headershadow {
+	background-image: url("../images/headershadow.png");
+	background-position: bottom;
+	background-repeat: repeat-x;
 	height: 28px;
 	width: 100%;
-	background-image: url("../images/headershadow.png");
-	background-repeat: repeat-x;
-	background-position: bottom;
-
 }
 
 .content {
-	margin-bottom: 40px;
 	/*background-color: yellow;*/
 	display: flex;
 	flex-direction: row;
 	flex-grow: 1;
+	margin-bottom: 40px;
 }
 
 /*--------------------------------------------------------------*/
 
 .transactionwrapper {
-	margin-left: 192px;
+	/*background-color: purple;*/
 	display: flex;
 	flex-direction: column;
-	/*background-color: purple;*/
 	flex-grow: 0;
+	margin-left: 192px;
 }
 
 .actionwrapper {
+	/*background-color: pink;*/
 	display: flex;
 	flex-direction: column;
-	/*background-color: pink;*/
 	flex-grow: 1;
 }
 
@@ -160,31 +158,28 @@ h1 {
 }
 
 .transmid {
-	margin: 12px 0px;
 	display: flex;
 	flex-direction: row;
 	flex-grow: 0;
+	margin: 12px 0px;
 }
 
 .transmid div {
 	height: 44px;
-
 }
 
 .transbottom {
-	height: 54px;
 	display: flex;
-
-
+	height: 54px;
 }
 
 .transbottom div {
-	height: 52px;
-	border-radius: 6px;
-	background-color: #767171;
-	flex-grow: 1;
-	display: flex;
 	align-items: center;
+	background-color: #767171;
+	border-radius: 6px;
+	display: flex;
+	flex-grow: 1;
+	height: 52px;
 	justify-content: center;
 }
 
@@ -200,17 +195,17 @@ h1 {
 
 .revenue {
 	/*background-color: orange;*/
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	margin-right: 19px;
 }
 
 .deductions {
 	/*background-color: lightblue;*/
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	margin-left: 19px;
 }
 
@@ -223,42 +218,41 @@ h1 {
 }
 
 .startingcontainer div, .endingcontainer div {
-	flex-grow: 1;
-	display: flex;
-	height: 43px;
-	min-width: 168px;
-	max-width: 168px;
 	align-items: center;
+	display: flex;
+	flex-grow: 1;
+	height: 43px;
 	justify-content: center;
 	margin-left: 0px;
 	margin-right: 4px;
+	max-width: 168px;
+	min-width: 168px;
 }
 
-.startingcontainer div:nth-child(2), 
+.startingcontainer div:nth-child(2),
 .endingcontainer div:nth-child(2) {
 	margin-left: 4px;
 	margin-right: 0px;
 }
 
-.startingcontainer div, 
+.startingcontainer div,
 .endingcontainer div,
 .sourcecontainer div,
 .revenuecontainer div,
 .deductionscontainer div,
 .revenueheader div,
 .deductionsheader div {
-	display: flex;
 	align-items: center;
+	display: flex;
 	justify-content: center;
 }
 
 .revenueheader, .deductionsheader {
-	height: 43px;
 	display: flex;
-	width: 100%;
 	flex-direction: row;
+	height: 43px;
 	margin-bottom: 6px;
-
+	width: 100%;
 }
 
 .revenueheader div, .deductionsheader div {
@@ -272,7 +266,6 @@ h1 {
 .sourcecontainer div {
 	flex-grow: 1;
 	height: 25px;
-
 }
 
 .revenuecontainer, .deductionscontainer {
@@ -289,43 +282,42 @@ h1 {
 }
 
 .revenuecontainer div, .deductionscontainer div {
-	flex-grow: 1;
-	border-radius: 6px;
-	height: 38px;
-	min-width: 168px;
-	max-width: 168px;
 	align-items: center;
+	border-radius: 6px;
+	flex-grow: 1;
+	height: 38px;
 	justify-content: center;
 	margin-left: 0px;
 	margin-right: 4px;
+	max-width: 168px;
+	min-width: 168px;
 }
 
 .revenuecontainer div:nth-child(2), .deductionscontainer div:nth-child(2) {
 	flex-grow: 1;
 	margin-left: 4px;
 	margin-right: 0px;
-
 }
 
 .deductionscontainer div, .deductionsheader div{
-	border-radius: 6px;
 	background-color: #fbe5d6;
+	border-radius: 6px;
 }
 
 .revenuecontainer div, .revenueheader div {
-	border-radius: 6px;
 	background-color: #c5e0b4;
+	border-radius: 6px;
 }
 
 .startingcontainer div, .endingcontainer div {
-	border-radius: 6px;
 	background-color: #767171;
+	border-radius: 6px;
 }
 
 .endingcontainer div:nth-child(2) {
 	background-color: #fff;
-	box-sizing: border-box;
 	border: solid 2px #767171;
+	box-sizing: border-box;
 }
 
 .endingcontainer div:nth-child(2) h1 {
@@ -341,11 +333,11 @@ h1 {
 }
 
 .userinfo div {
-	width: 100%;
+	align-items: center;
 	display: flex;
 	flex-direction: row;
 	flex: 1 100%;
-	align-items: center;
+	width: 100%;
 }
 
 .userinfo div:first-child {
@@ -357,59 +349,59 @@ h1 {
 }
 
 .userinfo div span {
+	color: #ff9110;
 	flex: 1;
+	font-size: 16px;
+	font-weight: bold;
 	justify-content: center;
 	text-transform: uppercase;
-	color: #ff9110;
-	font-weight: bold;
-	font-size: 16px;
 	white-space: nowrap;
 }
 
 .userinfo div span:nth-child(2) {
-	text-transform: capitalize;
 	color: #767171;
 	text-align: right;
+	text-transform: capitalize;
 }
 
 .userinfo div span:nth-child(1) {
 	flex-grow: 0;
-	
+
 }
 
 /*--------------------------------------------------------------*/
 
 .pagetitle {
-	display: flex;
 	align-items: center;
+	display: flex;
 	flex-grow: 1;
 }
 
 .pagetitle h3 {
+	color: #767171;
 	flex-grow: 1;
-	text-align: right;
-	text-transform: capitalize;
 	font-size: 48px;
 	font-weight: bold;
-	color: #767171;
+	text-align: right;
+	text-transform: capitalize;
 	white-space: nowrap;
 }
 
 .split {
+	background-image: url("../images/split.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	flex-grow: 0;
+	margin: 0px 15px 0px 15px ;
 	max-width: 4px;
 	min-width: 4px;
-	background-image: url("../images/split.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	margin: 0px 15px 0px 15px ;
-	flex-grow: 0;
 }
 
 /*--------------------------------------------------------------*/
 
 .logo {
-	display: flex;
 	align-items: center;
+	display: flex;
 }
 
 .logo img {
@@ -418,27 +410,27 @@ h1 {
 
 /*--------------------------------------------------------------*/
 
-.revenuesource, 
+.revenuesource,
 .deductionssource {
 	display: flex;
 	margin-top: 6px;
 }
 
-.revenuesource div, 
+.revenuesource div,
 .deductionssource div{
-	color: #767171;
-	display: flex;
-	min-height: 22px;
-	max-height: 22px;
-	min-width: 168px;
-	max-width: 168px;
 	align-items: center;
 	border-radius: 6px;
+	color: #767171;
+	display: flex;
 	margin-left: 0px;
 	margin-right: 4px;
+	max-height: 22px;
+	max-width: 168px;
+	min-height: 22px;
+	min-width: 168px;
 }
 
-.revenuesource div p, 
+.revenuesource div p,
 .deductionssource div p {
 	margin-left: 8px;
 }
@@ -453,11 +445,11 @@ h1 {
 
 .deductionssource div:nth-child(2),
 .revenuesource div:nth-child(2) {
+	background-color: #fff;
 	box-sizing: border-box;
+	justify-content: center;
 	margin-left: 4px;
 	margin-right: 0px;
-	background-color: #fff;
-	justify-content: center;
 }
 
 .revenuesource div:nth-child(2) {
@@ -476,28 +468,28 @@ h1 {
 }
 
 .navbuttons {
-	display: flex;
 	background-color: pink;
+	display: flex;
 }
 
 .calendar {
 	/*calendar 297x233*/
-	min-height: 233px;
-	max-height: 233px;
-	min-width: 297px;
-	max-width: 297px;
 	background-image: url("../images/calendar.png");
 	background-repeat: no-repeat;
+	max-height: 233px;
+	max-width: 297px;
+	min-height: 233px;
+	min-width: 297px;
 }
 
 .savebutton {
-	display: flex;
 	background-color: yellow;
+	display: flex;
 }
 
 .submitbutton {
-	display: flex;
 	background-color: green;
+	display: flex;
 }
 
 

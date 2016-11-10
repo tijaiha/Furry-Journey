@@ -59,11 +59,12 @@ $editing = NULL;
 
 	if (!empty($_POST['editSubmit'])) {
 		$user = new User((int) $_POST['userID']);
+		var_dump($user);
 		$editing = True;
 	}
 
 	if (!empty($_POST['updateSubmit'])) {
-		
+
 		$error = "";
 
 		if (!$_POST['firstName']) {
@@ -84,8 +85,6 @@ $editing = NULL;
 
 		if (!$error && $editing) {
 
-			$user = new User(escape($_POST['userID']));
-
 			if ($_POST['userActive']) {
 				$_POST['userActive'] = 1;
 			} else {
@@ -98,10 +97,10 @@ $editing = NULL;
 			$user->SetUser(escape($_POST['userName']));
 			$user->SetPass(escape($_POST['password']));
 			$user->SetPerm(escape($_POST['role']));
-			$user->WriteUser();
+			debug_to_console(var_dump($user));
+			// $user->WriteUser();
 
 		}
-		var_dump($user);
 	}
 
 	?>
@@ -132,7 +131,7 @@ $editing = NULL;
 						}
 					} else {
 						echo "checked";
-					}					
+					}
 
 					?>>
 				</td>
@@ -165,47 +164,47 @@ $editing = NULL;
 					?>">
 				</td>
 				<td>
-					<select id= "role" name="role">	
+					<select id= "role" name="role">
 
 						<?php
 
 						if (!empty($_POST['editSubmit'])) {
 
 							foreach ($permissions as $key => $value) {
-								if($value['id_pk'] == $user->GetPerm()) { 
+								if($value['id_pk'] == $user->GetPerm()) {
 
-									echo '<option selected value="' . 
-									$value['id_pk'] . 
-									'">' . 
-									$value['permission_name'] . 
+									echo '<option selected value="' .
+									$value['id_pk'] .
+									'">' .
+									$value['permission_name'] .
 									'</option>';
 
 								} else {
 
-									echo '<option value="' . 
-									$value['id_pk'] . 
-									'">' . 
-									$value['permission_name'] . 
+									echo '<option value="' .
+									$value['id_pk'] .
+									'">' .
+									$value['permission_name'] .
 									'</option>';
-								} 
+								}
 							}
 
 						} else {
 							foreach ($permissions as $key => $value) {
-								if($value['permission_name'] == "Clerk") { 
+								if($value['permission_name'] == "Clerk") {
 
-									echo '<option selected value="' . 
-									$value['id_pk'] . 
-									'">' . 
-									$value['permission_name'] . 
+									echo '<option selected value="' .
+									$value['id_pk'] .
+									'">' .
+									$value['permission_name'] .
 									'</option>';
 
 								} else {
 
-									echo '<option value="' . 
-									$value['id_pk'] . 
-									'">' . 
-									$value['permission_name'] . 
+									echo '<option value="' .
+									$value['id_pk'] .
+									'">' .
+									$value['permission_name'] .
 									'</option>';
 
 								}
@@ -237,7 +236,7 @@ $editing = NULL;
 
 
 			foreach ($userlist as $key => $value) {
-				
+
 				if ($value['active'] == 1) {
 					$value['active'] = "Active";
 					$row = '<tr class="active">';
@@ -246,24 +245,17 @@ $editing = NULL;
 					$row = '<tr class="inactive">';
 				}
 
-				echo 
-				$row . 
+				echo
+				$row .
 				'<form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="userID" name="userID" value="' . $value['id'] . '">' .
-				$btd . $value['active'] . 
-				$btd . $value['user'] . $etd . 
-				$btd . $etd . 
-				$btd . $value['first'] . $etd . 
-				$btd . $value['last'] . $etd . 
-				$btd . $value['role'] . $etd . 
-				$btd . 
-				'<input type="submit" name="editSubmit" value="Edit">' .
-				$etd . 
-				'</form></tr>';
-
+				$btd . $value['active'] . $etd .
+				$btd . $value['user'] . $etd .
+				$btd . $etd .
+				$btd . $value['first'] . $etd .
+				$btd . $value['last'] . $etd .
+				$btd . $value['role'] . $etd .
+				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
 			}
-
-
-
 			?>
 
 		</table>

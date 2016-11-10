@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'core/init.php';
 require_once 'functions/ui.php';
 //require_once 'includes/loggedin.php';
@@ -8,7 +8,6 @@ require_once 'functions/ui.php';
 <div class="transactionwrapper">
 	<?php
 	//error_reporting(0);
-
 
 	// If create source submit is pressed
 	if (!empty($_POST['createSubmit'])) {
@@ -23,7 +22,6 @@ require_once 'functions/ui.php';
 		// Create new source object using submitted name
 		$source = new Source(escape($_POST['sourceName']));
 
-
 		// To-Do:
 		// THROW ERROR IF source EXISTS!
 		//
@@ -36,7 +34,7 @@ require_once 'functions/ui.php';
 			// Check for form population errors
 			if (!$error) {
 
-				// Populate $_POST['sourceActive'] with a 1 or 0 
+				// Populate $_POST['sourceActive'] with a 1 or 0
 				// (check box defaults to "on" or null)
 				if ($_POST['sourceActive']) {
 					$_POST['sourceActive'] = 1;
@@ -47,7 +45,7 @@ require_once 'functions/ui.php';
 				// Set source class properties to values from POST
 				$source->SetActive($_POST['sourceActive']);
 				$source->SetName(escape($_POST['sourceName']));
-				
+
 				// Write the source to database
 				$source->WriteSource();
 
@@ -59,8 +57,6 @@ require_once 'functions/ui.php';
 			// Write the source to database
 			$source->WriteSource();
 		}
-
-
 	}
 
 	// If edit source is pressed
@@ -71,9 +67,7 @@ require_once 'functions/ui.php';
 		$source = new Source((int) $_POST['sourceID']);
 
 		var_dump($source);
-
 	}
-
 	?>
 
 	<form action="index.php?page=sources" method="post" autocomplete="off">
@@ -104,14 +98,14 @@ require_once 'functions/ui.php';
 						}
 					} else {
 						echo "checked";
-					}					
+					}
 
 					?>>
 				</td>
 				<td>
 					<input type="text" autocomplete="off" id="sourceName" name="sourceName" value="<?php
 
-					// Populate source name form field with edited source 
+					// Populate source name form field with edited source
 					if (!empty($_POST['editSubmit'])) {
 						echo $source->GetName();
 					}
@@ -136,7 +130,7 @@ require_once 'functions/ui.php';
 
 			// Create and populate table with all sources.
 			foreach ($sourcelist as $key => $value) {
-				
+
 				if ($value['active'] == 1) {
 					$value['active'] = "Active";
 					$row = '<tr class="active">';
@@ -145,14 +139,14 @@ require_once 'functions/ui.php';
 					$row = '<tr class="inactive">';
 				}
 
-				echo 
-				$row . 
+				echo
+				$row .
 				'<form action="index.php?page=sources" method="post" autocomplete="off"><input type="hidden" id="sourceID" name="sourceID" value="' . $value['id'] . '">' .
 				$btd . $value['active'] . $etd .
-				$btd . $value['name'] . $etd . 
+				$btd . $value['name'] . $etd .
 				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
-
-			}?>
+			}
+			?>
 
 		</table>
 	</form>

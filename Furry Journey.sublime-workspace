@@ -1,0 +1,444 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Get",
+				"GetResult"
+			],
+			[
+				"G",
+				"GetActive"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"storea",
+				"storeauth"
+			],
+			[
+				"store",
+				"store_id"
+			],
+			[
+				"up",
+				"uPerm"
+			],
+			[
+				"isin",
+				"is_int"
+			],
+			[
+				"fe",
+				"fetchAll"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"per",
+				"permissions_fk"
+			],
+			[
+				"permissions",
+				"permissions_fk"
+			],
+			[
+				"first",
+				"firstname"
+			],
+			[
+				"last",
+				"lastName"
+			],
+			[
+				"user",
+				"userName"
+			],
+			[
+				"permission",
+				"permission_name"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"flex",
+				"flex-grow"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"Change",
+				"ChangeColors"
+			],
+			[
+				"Chan",
+				"ChangeColors"
+			],
+			[
+				"maxth",
+				"MaxThreadsPerHotkey\t#MaxThreadsPerHotkey"
+			],
+			[
+				"Esc",
+				"Escape"
+			],
+			[
+				"Pixel",
+				"PixelGetColor"
+			],
+			[
+				"mouse",
+				"MouseClick"
+			],
+			[
+				"Click",
+				"Click"
+			],
+			[
+				"Mouse",
+				"MouseClick"
+			],
+			[
+				"Send",
+				"SendInput"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
+			"settings":
+			{
+				"buffer_size": 72752,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 173.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"GitHub: Public Gist from Selection"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp64/www/Laith"
+	],
+	"file_history":
+	[
+		"/C/wamp64/www/Laith/Furry Journey.sublime-project",
+		"/C/wamp64/www/Laith/functions/ui.php",
+		"/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
+		"/C/Users/tijai/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/readme.txt",
+		"/C/wamp64/www/Laith/classes/Source.php",
+		"/C/wamp64/www/Laith/classes/Store.php",
+		"/C/wamp64/www/Laith/users.php",
+		"/C/wamp64/www/Laith/classes/User.php",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/wamp64/www/Laith/stores.php",
+		"/C/wamp64/www/Laith/daily.php",
+		"/C/wamp64/www/Laith/includes/loggedin.php",
+		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/WINDOWS/system32/http",
+		"/C/wamp64/www/Laith/css/styles.css",
+		"/C/wamp64/www/Laith/core/init.php",
+		"/C/wamp64/www/Laith/sources.php",
+		"/C/wamp64/www/Laith/.git/furry-journey/.gitignore",
+		"/C/wamp64/www/Laith/login.php",
+		"/C/wamp64/www/Laith/functions/sanitize.php",
+		"/C/wamp64/www/Laith/css/reset.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\wamp64\\www\\Laith\\*.*",
+			"C:\\wamp64\\www\\Laith",
+			"",
+			"C:\\Games\\SteamLibrary\\steamapps\\common\\ProjectZomboid\\media"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<",
+			"<td>",
+			"Store",
+			"var_dump",
+			">",
+			"user",
+			"background",
+			"var",
+			"ediv",
+			"bdiv"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"source",
+			"store"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72751,
+								72751
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 44769.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "Furry Journey.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"15":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"16":
+				{
+					"group": 0,
+					"index": 1
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 186.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
