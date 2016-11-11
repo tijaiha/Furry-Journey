@@ -7,14 +7,16 @@ require_once 'includes/loggedin.php';
 $db = new DB;
 $query = $db->runQuery("SELECT * FROM permissions");
 $permissions = $query->fetchAll(PDO::FETCH_ASSOC);
-$editResult = "";
 $editing = NULL;
+
+
 ?>
 
 <div class="transactionwrapper">
 
 	<?php
-	error_reporting(0);
+
+	//error_reporting(0);
 
 	if (!empty($_POST['createSubmit'])) {
 
@@ -53,17 +55,19 @@ $editing = NULL;
 			$user->SetPass(escape($_POST['password']));
 			$user->SetPerm(escape($_POST['role']));
 			$user->WriteUser();
-
 		}
+
 	}
 
 	if (!empty($_POST['editSubmit'])) {
-		$user = new User((int) $_POST['userID']);
-		var_dump($user);
+
+		$user = new User((int) $_POST['editUserID']);
 		$editing = True;
 	}
 
 	if (!empty($_POST['updateSubmit'])) {
+
+		$user = new User((int) $_POST['userID']);
 
 		$error = "";
 
@@ -83,7 +87,7 @@ $editing = NULL;
 			$error .= "Password";
 		}
 
-		if (!$error && $editing) {
+		if (!$error) {
 
 			if ($_POST['userActive']) {
 				$_POST['userActive'] = 1;
@@ -97,12 +101,9 @@ $editing = NULL;
 			$user->SetUser(escape($_POST['userName']));
 			$user->SetPass(escape($_POST['password']));
 			$user->SetPerm(escape($_POST['role']));
-			debug_to_console(var_dump($user));
-			// $user->WriteUser();
-
+			$user->UpdateUser();
 		}
 	}
-
 	?>
 
 	<form action="index.php?page=users" method="post" autocomplete="off">
@@ -247,7 +248,7 @@ $editing = NULL;
 
 				echo
 				$row .
-				'<form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="userID" name="userID" value="' . $value['id'] . '">' .
+				'<form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="editUserID" name="editUserID" value="' . $value['id'] . '">' .
 				$btd . $value['active'] . $etd .
 				$btd . $value['user'] . $etd .
 				$btd . $etd .
@@ -265,4 +266,3 @@ $editing = NULL;
 <div class="actionwrapper">
 
 </div>
-

@@ -19,6 +19,7 @@ Class User {
 	// populates $this->result with associative array.
 	private function Exists($init = null) {
 
+		// Attempt to connect to database.
 		try {
 
 			$db = new DB();
@@ -29,8 +30,14 @@ Class User {
 			echo "Unable to connect to database.";
 		}
 
+		if (is_null($init)) {
+			$this->result = False;
+		}
 
+		// Populate $results with associative array of
+		// passed in integer (user ID)
 		if (is_int($init)) {
+
 			$sql = "SELECT id_pk as ID,
 			first_name as fName,
 			last_name as lName,
@@ -40,17 +47,19 @@ Class User {
 			user_active as uActive
 			FROM user
 			WHERE id_pk = " . $init;
+
 			$query = $db->prepare($sql);
 			$query->execute();
 
 			$results = $query->fetch(PDO::FETCH_ASSOC);
-			
-			if ($results['uName']) {
+
+			// If query finds the user ID
+			if ($results['ID']) {
 				$this->result = True;
 			} else {
 				$this->result = False;
 			}
-		} 
+		}
 
 		if (is_string($init)) {
 			$sql = 'SELECT id_pk as ID,
@@ -62,23 +71,19 @@ Class User {
 			user_active as uActive
 			FROM user
 			WHERE username = "' . $init . '"';
+
 			$query = $db->prepare($sql);
 			$query->execute();
 
-			$results = $query->fetch(PDO::FETCH_ASSOC); 
+			$results = $query->fetch(PDO::FETCH_ASSOC);
 
 			if ($results['ID']) {
 				$this->result = True;
 			} else {
 				$this->result = False;
 			}
-		}
 
-		if (is_null($init)) {
-			$this->result = False;
-			return False;
-			exit();
-		} 
+		}
 
 		if ($this->result) {
 			$this->ID = $results['ID'];
@@ -93,10 +98,27 @@ Class User {
 
 	public function WriteUser() {
 
-			$db = new DB;
-			$db = $db->connect();
+		$db = new DB;
+		$db = $db->connect();
 
-		if($this->result) {
+		if (isset($this->fName, $this->lName, $this->uName, $this->uPass, $this->uPerm, $this->uActive)) {
+			$query = $db->prepare("INSERT INTO user (first_name, last_name, username, password, permissions_fk, user_active) VALUES (:fname, :lname, :uname, :pass, :perm, :active)");
+			$query->bindValue(':fname',$this->fName);
+			$query->bindValue(':lname',$this->lName);
+			$query->bindValue(':uname',$this->uName);
+			$query->bindValue(':pass',$this->uPass);
+			$query->bindValue(':perm',$this->uPerm);
+			$query->bindValue(':active',$this->uActive);
+			$query->execute();
+		}
+	}
+
+	public function UpdateUser() {
+
+		$db = new DB;
+		$db = $db->connect();
+
+		if(isset($this->ID)) {
 			$query = $db->prepare("UPDATE user SET first_name = :fname, last_name = :lname, username = :uname, password = :pass, permissions_fk = :perm, user_active = :active WHERE id_pk = :id");
 			$query->bindValue(':fname',$this->fName);
 			$query->bindValue(':lname',$this->lName);
@@ -105,22 +127,9 @@ Class User {
 			$query->bindValue(':perm',$this->uPerm);
 			$query->bindValue(':active',$this->uActive);
 			$query->bindValue(':id',$this->ID);
-
-
-		} elseif (isset($this->fName, $this->lName, $this->uName, $this->uPass, $this->uPerm, $this->uActive)) {
-
-			$query = $db->prepare("INSERT INTO user (first_name, last_name, username, password, permissions_fk, user_active) VALUES (:fname, :lname, :uname, :pass, :perm, :active)");
-			$query->bindValue(':fname',$this->fName);
-			$query->bindValue(':lname',$this->lName);
-			$query->bindValue(':uname',$this->uName);
-			$query->bindValue(':pass',$this->uPass);
-			$query->bindValue(':perm',$this->uPerm);
-			$query->bindValue(':active',$this->uActive);
+			$query->execute();
 		}
-
-		$query->execute();
 	}
-
 // ----------------- Gets -----------------
 
 

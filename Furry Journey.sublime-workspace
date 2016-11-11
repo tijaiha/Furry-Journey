@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"edit",
+				"editResult"
+			],
+			[
 				"Get",
 				"GetResult"
 			],
@@ -128,10 +132,26 @@
 	"buffers":
 	[
 		{
-			"file": "/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
+			"file": "classes/User.php",
 			"settings":
 			{
-				"buffer_size": 72752,
+				"buffer_size": 3859,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "classes/DB.php",
+			"settings":
+			{
+				"buffer_size": 3596,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "users.php",
+			"settings":
+			{
+				"buffer_size": 5742,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -202,13 +222,15 @@
 	},
 	"expanded_folders":
 	[
-		"/C/wamp64/www/Laith"
+		"/C/wamp64/www/Laith",
+		"/C/wamp64/www/Laith/classes",
+		"/C/wamp64/www/Laith/core"
 	],
 	"file_history":
 	[
+		"/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
 		"/C/wamp64/www/Laith/Furry Journey.sublime-project",
 		"/C/wamp64/www/Laith/functions/ui.php",
-		"/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
 		"/C/Users/tijai/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/readme.txt",
 		"/C/wamp64/www/Laith/classes/Source.php",
@@ -231,7 +253,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -249,6 +271,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$editResult",
 			"<",
 			"<td>",
 			"Store",
@@ -278,32 +301,91 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
+					"file": "classes/User.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 72752,
+						"buffer_size": 3859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72751,
-								72751
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 44769.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "classes/DB.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "users.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5742,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4084,
+								4084
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -397,12 +479,12 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"15":
+				"18":
 				{
 					"group": 0,
 					"index": 0
 				},
-				"16":
+				"19":
 				{
 					"group": 0,
 					"index": 1
