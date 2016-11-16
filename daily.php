@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'core/init.php';
 require_once 'functions/ui.php';
 require_once 'includes/loggedin.php';
@@ -54,24 +54,24 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 						<div><h1>$0</h1></div>
 					</div>
 				</div>
-				
+
 				<div class="actionwrapper">
-					<div class="navbuttons">
+					<!-- <div class="navbuttons">
 						<div><h1>Prev</h1></div>
 						<div><h1>Next</h1></div>
 					</div>
-					
+
 					<div class="calendar">
-						
+
 					</div>
-					
+
 					<div class="savebutton">
 						<div><h1>Save Work</h1></div>
 						<div><p>Last Saved 5 Min Ago</p></div>
 					</div>
-					
+
 					<div class="submitbutton">
 						<div><h1>Submit Report</h1></div>
-					</div>
+					</div> -->
 
 				</div>

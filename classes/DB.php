@@ -7,13 +7,13 @@ Class DB {
 		$dsn = 'mysql:host=127.0.0.1;dbname=reporting';
 		$username = 'reportingdb';
 		$password = '?4o=WxInph-w#n6%=_';
-		
+
 		try {
 
 			$db = new PDO($dsn, $username, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			return $db;
-			
+
 		} catch(PDOException $e) {
 
 			die($e->getMessage());
@@ -23,7 +23,7 @@ Class DB {
 	}
 
 	public function runQuery($sql) {
-		
+
 		$query = $this->connect();
 		$result = $query->query($sql);
 		return $result;
@@ -40,10 +40,10 @@ Class DB {
 
 		$result = $db->prepare("
 
-			SELECT id_pk, user_active 
-			FROM user 
-			WHERE user_active = 1 
-			AND username = lower(?) 
+			SELECT id_pk, user_active
+			FROM user
+			WHERE user_active = 1
+			AND username = lower(?)
 			AND password = ?
 
 			");
@@ -60,8 +60,8 @@ Class DB {
 			$_SESSION['error'] = "";
 			$query = $db->query("
 
-				SELECT first_name, last_name, permissions_fk, id_pk 
-				FROM user 
+				SELECT first_name, last_name, permissions_fk, id_pk
+				FROM user
 				WHERE id_pk = '$id'
 
 				");
@@ -73,7 +73,7 @@ Class DB {
 			$_SESSION['last_name'] = $name['last_name'];
 			$_SESSION['role'] = $name['permissions_fk'];
 			$_SESSION['user_id'] = $name['id_pk'];
-			header('location: index.php');
+			return true;
 		}else {
 			return false;
 		}
@@ -84,9 +84,9 @@ Class DB {
 		$result = $query->query("
 
 			SELECT 	user.id_pk as id,
-			user.first_name as first, 
-			user.last_name as last, 
-			user.username as user, 
+			user.first_name as first,
+			user.last_name as last,
+			user.username as user,
 			user.user_active as active,
 			permissions.permission_name as role
 			FROM user
@@ -105,9 +105,9 @@ Class DB {
 			$query = $this->connect();
 			$result = $query->prepare("
 
-				SELECT username 
-				FROM user 
-				WHERE username 
+				SELECT username
+				FROM user
+				WHERE username
 				LIKE ?
 
 				");
@@ -134,10 +134,10 @@ Class DB {
 
 		$db = $this->connect();
 
-		$sql = "SELECT 
-		id_pk as id, 
-		store_name as name, 
-		store_active as active 
+		$sql = "SELECT
+		id_pk as id,
+		store_name as name,
+		store_active as active
 		FROM store";
 
 		$query = $db->query($sql);
@@ -151,10 +151,10 @@ Class DB {
 
 		$db = $this->connect();
 
-		$sql = "SELECT 
-		id_pk as id, 
-		source_name as name, 
-		source_active as active 
+		$sql = "SELECT
+		id_pk as id,
+		source_name as name,
+		source_active as active
 		FROM source";
 
 		$query = $db->query($sql);
