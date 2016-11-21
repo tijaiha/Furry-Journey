@@ -76,7 +76,7 @@ $editing = NULL;
 				<td>
 					<input type="text" autocomplete="off" id="storeName" name="storeName" value="<?php
 					if (!empty($_POST['editSubmit'])) {
-						echo $store->GetStore();
+						echo $store->GetName();
 					}
 					?>">
 				</td>

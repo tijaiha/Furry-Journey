@@ -98,7 +98,7 @@ Class Store {
 		$this->ID = $value;
 	}
 	public function SetName($value){
-		$this->fName = $value;
+		$this->sName = $value;
 	}
 	public function SetActive($value){
 		$this->sActive = $value;

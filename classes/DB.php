@@ -138,7 +138,8 @@ Class DB {
 		id_pk as id,
 		store_name as name,
 		store_active as active
-		FROM store";
+		FROM store
+		ORDER BY store_active DESC, store_name ASC;";
 
 		$query = $db->query($sql);
 		$results = $query->fetchAll(PDO::FETCH_ASSOC);
