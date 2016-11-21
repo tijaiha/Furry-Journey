@@ -156,7 +156,8 @@ Class DB {
 		id_pk as id,
 		source_name as name,
 		source_active as active
-		FROM source";
+		FROM source
+		ORDER BY source_active DESC, source_name ASC;";
 
 		$query = $db->query($sql);
 		$results = $query->fetchAll(PDO::FETCH_ASSOC);
