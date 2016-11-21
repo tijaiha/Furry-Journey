@@ -99,6 +99,21 @@ Class DB {
 		return $return;
 	}
 
+	public function fetchStores() {
+		$query = $this->connect();
+		$result = $query->query("
+
+			SELECT id_pk as id,
+			store_name as name,
+			store_active as active,
+			FROM store
+			ORDER BY store_active DESC, store_name ASC;
+
+			");
+		$return = $result->fetchAll(PDO::FETCH_ASSOC);
+		return $return;
+	}
+
 	public function userExists($user){
 
 		try {
