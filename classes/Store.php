@@ -1,10 +1,10 @@
 <?php
 
-Class User {
+Class Store {
 
-	private $ID,
-	$sName,
-	$sActive,
+	private $storeID,
+	$storeName,
+	$storeActive,
 	$result = null;
 
 	function __construct($init) {
@@ -13,40 +13,25 @@ Class User {
 
 	// Accepts store name or store id
 	// populates $this->result with associative array.
+
 	private function Exists($init = null) {
 
-		// Attempt to connect to database.
-		try {
+		$db = new DB();
+		$db = $db->connect();
 
-			$db = new DB();
-			$db = $db->connect();
 
-		} catch (EXCEPTION $e) {
-
-			echo "Unable to connect to database.";
-		}
-
-		if (is_null($init)) {
-			$this->result = False;
-		}
-
-		// Populate $results with associative array of
-		// passed in integer (store ID)
 		if (is_int($init)) {
-
-			$sql = "SELECT id_pk as ID,
+			$sql = "SELECT id_pk as sID,
 			store_name as sName,
 			store_active as sActive
 			FROM store
 			WHERE id_pk = " . $init;
-
 			$query = $db->prepare($sql);
 			$query->execute();
 
 			$results = $query->fetch(PDO::FETCH_ASSOC);
-
-			// If query finds the store ID
-			if ($results['ID']) {
+			
+			if ($results['sName']) {
 				$this->result = True;
 			} else {
 				$this->result = False;
@@ -54,29 +39,33 @@ Class User {
 		}
 
 		if (is_string($init)) {
-			$sql = 'SELECT id_pk as ID,
+			$sql = 'SELECT id_pk as sID,
 			store_name as sName,
 			store_active as sActive
 			FROM store
-			WHERE store_name LIKE "' . $init . '"';
-
+			WHERE store_name = "' . $init . '"';
 			$query = $db->prepare($sql);
 			$query->execute();
 
-			$results = $query->fetch(PDO::FETCH_ASSOC);
+			$results = $query->fetch(PDO::FETCH_ASSOC); 
 
-			if ($results['ID']) {
+			if ($results['sID']) {
 				$this->result = True;
 			} else {
 				$this->result = False;
 			}
-
 		}
 
+		if (is_null($init)) {
+			$this->result = False;
+			return False;
+			exit();
+		} 
+
 		if ($this->result) {
-			$this->ID = $results['ID'];
-			$this->sName = $results['sName'];
-			$this->sActive = $results['sActive'];
+			$this->storeID = $results['sID'];
+			$this->storeName = $results['sName'];
+			$this->storeActive = $results['sActive'];
 		}
 	}
 
@@ -85,40 +74,37 @@ Class User {
 		$db = new DB;
 		$db = $db->connect();
 
-		if (isset($this->sName, $this->sActive)) {
-			$query = $db->prepare("INSERT INTO store (store_name, store_active) VALUES (:sname, :sactive)");
-			$query->bindValue(':sname',$this->sName);
-			$query->bindValue(':sactive',$this->sActive);
-			$query->execute();
-		}
-	}
+		if($this->result) {
 
-	public function UpdateStore() {
-
-		$db = new DB;
-		$db = $db->connect();
-
-		if(isset($this->ID)) {
 			$query = $db->prepare("UPDATE store SET store_name = :sname, store_active = :sactive WHERE id_pk = :id");
-			$query->bindValue(':sname',$this->sName);
-			$query->bindValue(':sactive',$this->sActive);
-			$query->bindValue(':id',$this->ID);
-			$query->execute();
+			$query->bindValue(':sname',$this->storeName);
+			$query->bindValue(':sactive',$this->storeActive);
+			$query->bindValue(':id',$this->storeID);
+
+		} elseif (isset($this->storeName, $this->storeActive)) {
+
+			$query = $db->prepare("INSERT INTO store (store_name, store_active) VALUES (:sname, :sactive)");
+			$query->bindValue(':sname',$this->storeName);
+			$query->bindValue(':sactive',$this->storeActive);
 		}
+
+		$query->execute();
 	}
+
+
 // ----------------- Gets -----------------
 
 
 	public function GetID(){
-		return $this->ID;
+		return $this->storeID;
 	}
 
 	public function GetName(){
-		return $this->sName;
+		return $this->storeName;
 	}
 
 	public function GetActive(){
-		return $this->sActive;
+		return $this->storeActive;
 	}
 
 	public function GetResult(){
@@ -129,15 +115,16 @@ Class User {
 // ----------------- Sets -----------------
 
 	public function SetID($value){
-		$this->ID = $value;
+		$this->storeID = $value;
 	}
 
 	public function SetName($value){
-		$this->fName = $value;
+		$this->storeName = $value;
 	}
 
 	public function SetActive($value){
-		$this->sActive = $value;
+		$this->storeActive = $value;
 	}
 
+// End of class
 }

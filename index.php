@@ -48,7 +48,7 @@ require_once 'includes/loggedin.php';
 			</div>
 			<div class="headershadow"></div>
 			<div class="content">
-				<?php
+				<?php 
 					if(isset($_GET["page"])) {
 						include $_GET["page"] . ".php";
 					} else {

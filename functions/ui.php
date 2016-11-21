@@ -59,7 +59,7 @@ function SetPageTitle($page) {
 function GetStores($id) {
 	$db = new DB();
 	$db = $db->connect();
-	
+
 	$sql = '
 	SELECT
 	store_user.store_id_fk as store_id,
@@ -69,7 +69,7 @@ function GetStores($id) {
 	LEFT JOIN store
 	ON store_user.store_id_fk=store.id_pk
 	WHERE store.store_active = "1" AND store_user.user_id_fk ="' . $id . '"';
-	
+
 	$query = $db->prepare($sql);
 	$query->execute();
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -83,7 +83,7 @@ function GetStores($id) {
 function StoreName($store) {
 	$db = new DB();
 	$db = $db->connect();
-	
+
 	$sql = '
 	SELECT store_name as name
 	FROM store
@@ -101,8 +101,6 @@ function StoreAuth() {
 	$db = $db->connect();
 	$query = $db->query('SELECT store_id_fk as store_id FROM store_user WHERE user_id_fk="' . $_SESSION['user_id'] . '"');
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-	//var_dump($result);
 
 	foreach ($result as $key => $value) {
 		foreach ($value as $key => $value) {

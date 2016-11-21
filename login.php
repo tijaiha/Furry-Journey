@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 
-error_reporting(0);
+//error_reporting(0);
 
 if($_POST['formSubmit'] == "Submit") {
    session_start();
