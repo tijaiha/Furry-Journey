@@ -90,7 +90,7 @@ Class DB {
 		FROM user
 		LEFT JOIN permissions
 		ON user.permissions_fk=permissions.id_pk
-		WHERE user.id_pk NOT IN (' . $ids . ')';
+		WHERE user.id_pk NOT IN (' . $ids . ') AND user.user_active = 1';
 
 		$query = $this->connect();
 		$result = $query->query($sql);
@@ -187,7 +187,7 @@ Class DB {
 		ON store_user.user_id_fk=user.id_pk
 		LEFT JOIN permissions
 		ON user.permissions_fk=permissions.id_pk
-		WHERE store_user.store_id_fk = " . $id;
+		WHERE store_user.store_id_fk = " . $id . " AND user.user_active = 1";
 
 		$query = $db->query($sql);
 		$results = $query->fetchAll(PDO::FETCH_ASSOC);

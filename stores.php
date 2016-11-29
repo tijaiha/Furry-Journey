@@ -102,12 +102,12 @@ $editing = NULL;
 			<!-- PULL FROM DATABASE -->
 			<?php
 			$db = new DB;
-			$storelist = $db->FetchStores();
 			$btd = "<td><p>";
 			$etd = "</p></td>";
 			$storeid;
 			$activeid = array();
-			//var_dump($storelist);
+
+			$storelist = $db->FetchStores();
 			foreach ($storelist as $key => $value) {
 				if ($value['active'] == 1) {
 					$value['active'] = "Active";
@@ -123,8 +123,8 @@ $editing = NULL;
 				$btd . $value['active'] . $etd .
 				$btd . $value['name'] . $etd .
 				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
-				$employeelist = $db->FetchEmployees($value['id']);
 
+				$employeelist = $db->FetchEmployees($value['id']);
 				foreach ($employeelist as $key => $value) {
 					$activeid[] = $value['uid'];
 					echo
