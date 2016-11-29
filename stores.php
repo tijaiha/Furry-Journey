@@ -46,6 +46,15 @@ $editing = NULL;
 			$store->UpdateStore();
 		}
 	}
+
+	if (!empty($_POST['employeeAddSubmit'])) {
+
+	}
+
+	if (!empty($_POST['employeeRemoveSubmit'])) {
+
+	}
+
 	?>
 
 	<form action="index.php?page=stores" method="post" autocomplete="off">
@@ -96,6 +105,8 @@ $editing = NULL;
 			$storelist = $db->FetchStores();
 			$btd = "<td><p>";
 			$etd = "</p></td>";
+			$storeid;
+			$activeid = array();
 			//var_dump($storelist);
 			foreach ($storelist as $key => $value) {
 				if ($value['active'] == 1) {
@@ -105,6 +116,7 @@ $editing = NULL;
 					$value['active'] = "Inactive";
 					$row = '<tr class="inactive">';
 				}
+				$storeid = $value['id'];
 				echo
 				$row .
 				'<form action="index.php?page=stores" method="post" autocomplete="off"><input type="hidden" id="editStoreID" name="editStoreID" value="' . $value['id'] . '">' .
@@ -112,11 +124,31 @@ $editing = NULL;
 				$btd . $value['name'] . $etd .
 				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
 				$employeelist = $db->FetchEmployees($value['id']);
+
 				foreach ($employeelist as $key => $value) {
-					echo '<tr class="employees"><td>' . $value['first_name'] . '</td><td>' . $value['last_name'] . '</td><td>' . $value['role'] . '</td></tr>';
+					$activeid[] = $value['uid'];
+					echo
+					'<form action="index.php?page=stores" method="post" autocomplete="off">
+					<input type="hidden" id="removeEmployeeID" name="removeEmployeeID" value="' . $value['id'] .
+					'"><tr class="employees"><td>'
+					. $value['first_name'] .
+					'</td><td>'
+					. $value['last_name'] .
+					'</td><td>'
+					. $value['role'] .
+					'</td><td><input type="submit" name="employeeRemoveSubmit" value="Remove"></td></form></tr>';
 					//var_dump($value);
 				}
+				echo '<tr><td><form action="index.php?page=stores" method="post" autocomplete="off">
+				<input type="hidden" id="addEmployeeStoreID" name="addEmployeeStoreID" value="' . $storeid .
+				'"><td><select id="employee" name="employee">';
+				$db->nonActiveEmployee($activeid);
+				unset($activeid);
+				echo'</select></td>
+				<td><input type="submit" name="employeeAddSubmit" value="Add"></td></tr>';
+
 			}
+
 			?>
 
 		</table>
