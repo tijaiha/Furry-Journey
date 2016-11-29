@@ -131,76 +131,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "classes/User.php",
-			"settings":
-			{
-				"buffer_size": 4072,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "users.php",
-			"settings":
-			{
-				"buffer_size": 5764,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stores.php",
-			"settings":
-			{
-				"buffer_size": 3045,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 1435,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "login.php",
-			"settings":
-			{
-				"buffer_size": 1486,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "classes/Store.php",
-			"settings":
-			{
-				"buffer_size": 2678,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "classes/DB.php",
-			"settings":
-			{
-				"buffer_size": 3855,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stores.php.old",
-			"settings":
-			{
-				"buffer_size": 3431,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -209,17 +139,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
-		"last_filter": "solat",
+		"height": 392.0,
+		"last_filter": "rein",
 		"selected_items":
 		[
 			[
-				"solat",
-				"SolarizedToggle: Toggle"
-			],
-			[
 				"rein",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"solat",
+				"SolarizedToggle: Toggle"
 			],
 			[
 				"install",
@@ -250,7 +180,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -274,33 +204,35 @@
 		"/C/wamp64/www/Laith",
 		"/C/wamp64/www/Laith/classes",
 		"/C/wamp64/www/Laith/core",
+		"/C/wamp64/www/Laith/css",
 		"/C/wamp64/www/Laith/functions",
 		"/C/wamp64/www/Laith/includes"
 	],
 	"file_history":
 	[
-		"/C/wamp64/www/Laith/includes/loggedin.php",
-		"/C/wamp64/www/Laith/daily.php",
-		"/C/wamp64/www/Laith/login.php",
+		"/C/wamp64/www/Laith/stores.php",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/wamp64/www/Laith/css/styles.css",
 		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/wamp64/www/Laith/daily.php",
+		"/C/wamp64/www/Laith/sources.php",
+		"/C/wamp64/www/Laith/classes/Source.php",
+		"/C/wamp64/www/Laith/classes/Store.php",
+		"/C/wamp64/www/Laith/classes/User.php",
+		"/C/wamp64/www/Laith/login.php",
+		"/C/wamp64/www/Laith/functions/ui.php",
+		"/C/wamp64/www/Laith/stores.php.old",
 		"/C/wamp64/www/Laith/users.php",
+		"/C/wamp64/www/Laith/includes/loggedin.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/Users/tijai/Documents/AHK Scripts/7DTD.ahk",
 		"/C/Users/tijai/AppData/Local/Temp/Temp1_RELXIX_A15b105_HUD_v0.16.zip/ReadMe.HUD.txt",
 		"/C/Users/tijai/Desktop/venla.txt",
 		"/C/wamp64/bin/apache/apache2.4.18/bin/php.ini",
 		"/C/wamp64/www/Laith/Furry Journey.sublime-project",
-		"/C/wamp64/www/Laith/functions/ui.php",
 		"/C/Users/tijai/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/readme.txt",
-		"/C/wamp64/www/Laith/classes/Source.php",
-		"/C/wamp64/www/Laith/classes/Store.php",
-		"/C/wamp64/www/Laith/classes/User.php",
-		"/C/wamp64/www/Laith/index.php",
-		"/C/wamp64/www/Laith/stores.php",
 		"/C/WINDOWS/system32/http",
-		"/C/wamp64/www/Laith/css/styles.css",
-		"/C/wamp64/www/Laith/sources.php",
 		"/C/wamp64/www/Laith/.git/furry-journey/.gitignore",
 		"/C/wamp64/www/Laith/functions/sanitize.php",
 		"/C/wamp64/www/Laith/css/reset.css"
@@ -322,9 +254,12 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"table",
+			"Store",
+			"store",
 			"exists",
 			"user",
 			"User",
@@ -353,6 +288,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"Source",
+			"source",
 			"store",
 			"Store",
 			"source",
@@ -367,251 +304,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "classes/User.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4072,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								4072
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "users.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5764,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								212,
-								212
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "stores.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3045,
-						"regions":
-						{
-							"bookmarks":
-							{
-								"flags": 144,
-								"icon": "bookmark",
-								"regions":
-								[
-								],
-								"scope": "bookmarks"
-							}
-						},
-						"selection":
-						[
-							[
-								75,
-								75
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								354,
-								354
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "login.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								523,
-								523
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "classes/Store.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2678,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								113,
-								119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "classes/DB.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3855,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2038,
-								2038
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1282.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "stores.php.old",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3431,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								352,
-								352
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
 			]
 		}
 	],

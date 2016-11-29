@@ -3,7 +3,10 @@ require_once 'core/init.php';
 require_once 'functions/ui.php';
 require_once 'includes/loggedin.php';
 
-StoreAuth();
+if (!$_SESSION['user'] == "Admin") {
+	StoreAuth();
+}
+
 
 if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 	//echo $_SESSION['storeauth'][0];
