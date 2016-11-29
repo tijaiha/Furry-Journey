@@ -139,17 +139,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
-		"last_filter": "solat",
+		"height": 392.0,
+		"last_filter": "rein",
 		"selected_items":
 		[
 			[
-				"solat",
-				"SolarizedToggle: Toggle"
-			],
-			[
 				"rein",
 				"Indentation: Reindent Lines"
+			],
+			[
+				"solat",
+				"SolarizedToggle: Toggle"
 			],
 			[
 				"install",
@@ -180,7 +180,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -204,23 +204,25 @@
 		"/C/wamp64/www/Laith",
 		"/C/wamp64/www/Laith/classes",
 		"/C/wamp64/www/Laith/core",
+		"/C/wamp64/www/Laith/css",
 		"/C/wamp64/www/Laith/functions",
 		"/C/wamp64/www/Laith/includes"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/stores.php",
+		"/C/wamp64/www/Laith/index.php",
+		"/C/wamp64/www/Laith/css/styles.css",
+		"/C/wamp64/www/Laith/classes/DB.php",
+		"/C/wamp64/www/Laith/daily.php",
 		"/C/wamp64/www/Laith/sources.php",
 		"/C/wamp64/www/Laith/classes/Source.php",
-		"/C/wamp64/www/Laith/classes/DB.php",
-		"/C/wamp64/www/Laith/stores.php",
 		"/C/wamp64/www/Laith/classes/Store.php",
 		"/C/wamp64/www/Laith/classes/User.php",
-		"/C/wamp64/www/Laith/daily.php",
 		"/C/wamp64/www/Laith/login.php",
 		"/C/wamp64/www/Laith/functions/ui.php",
 		"/C/wamp64/www/Laith/stores.php.old",
 		"/C/wamp64/www/Laith/users.php",
-		"/C/wamp64/www/Laith/index.php",
 		"/C/wamp64/www/Laith/includes/loggedin.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/Users/tijai/Documents/AHK Scripts/7DTD.ahk",
@@ -231,7 +233,6 @@
 		"/C/Users/tijai/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Games/SteamLibrary/steamapps/common/Kerbal Space Program/readme.txt",
 		"/C/WINDOWS/system32/http",
-		"/C/wamp64/www/Laith/css/styles.css",
 		"/C/wamp64/www/Laith/.git/furry-journey/.gitignore",
 		"/C/wamp64/www/Laith/functions/sanitize.php",
 		"/C/wamp64/www/Laith/css/reset.css"
@@ -256,6 +257,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"table",
 			"Store",
 			"store",
 			"exists",

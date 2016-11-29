@@ -83,8 +83,6 @@ h1 {
 	min-width: 160px;
 }
 
-
-
 .contentwrapper {
 	/*background-color: red;*/
 	display: flex;
@@ -492,15 +490,20 @@ h1 {
 	display: flex;
 }
 
-
 /*--------------------------------------------------------------*/
 
-/* database list items */
+/* database list items
 .active {
 
 }
 
-/* database list items */
 .inactive {
 
+} */
+
+/*--------------------------------------------------------------*/
+
+.employees {
+	border: 1px ;
+	background-color: pink;
 }

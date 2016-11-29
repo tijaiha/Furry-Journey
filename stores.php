@@ -93,7 +93,7 @@ $editing = NULL;
 			<!-- PULL FROM DATABASE -->
 			<?php
 			$db = new DB;
-			$storelist = $db->fetchStores();
+			$storelist = $db->FetchStores();
 			$btd = "<td><p>";
 			$etd = "</p></td>";
 			//var_dump($storelist);
@@ -111,6 +111,11 @@ $editing = NULL;
 				$btd . $value['active'] . $etd .
 				$btd . $value['name'] . $etd .
 				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
+				$employeelist = $db->FetchEmployees($value['id']);
+				foreach ($employeelist as $key => $value) {
+					echo '<tr class="employees"><td>' . $value['first_name'] . '</td><td>' . $value['last_name'] . '</td><td>' . $value['role'] . '</td></tr>';
+					//var_dump($value);
+				}
 			}
 			?>
 

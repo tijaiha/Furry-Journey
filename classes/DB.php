@@ -148,6 +148,30 @@ Class DB {
 
 	}
 
+	public function FetchEmployees($id) {
+
+		$db = $this->connect();
+
+		$sql = "SELECT
+		store_user.id_pk as id,
+		user.first_name as first_name,
+		user.last_name as last_name,
+		permissions.permission_name as role
+		FROM store_user
+		LEFT JOIN store
+		ON store_user.store_id_fk=store.id_pk
+		LEFT JOIN user
+		ON store_user.user_id_fk=user.id_pk
+		LEFT JOIN permissions
+		ON user.permissions_fk=permissions.id_pk
+		WHERE store_user.store_id_fk = " . $id;
+
+		$query = $db->query($sql);
+		$results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+		return $results;
+	}
+
 	public function FetchSources() {
 
 		$db = $this->connect();
