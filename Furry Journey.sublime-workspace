@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"remo",
+				"removeEmployeeID"
+			],
+			[
+				"active",
+				"activeid"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
 				"edit",
 				"editResult"
 			],
@@ -131,6 +143,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "classes/DB.php",
+			"settings":
+			{
+				"buffer_size": 6748,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "classes/Store.php",
+			"settings":
+			{
+				"buffer_size": 2644,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stores.php",
+			"settings":
+			{
+				"buffer_size": 4564,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -210,6 +249,8 @@
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/Laith/classes/User.php",
+		"/C/wamp64/www/login/classes/DB.php",
 		"/C/wamp64/www/Laith/stores.php",
 		"/C/wamp64/www/Laith/index.php",
 		"/C/wamp64/www/Laith/css/styles.css",
@@ -218,7 +259,6 @@
 		"/C/wamp64/www/Laith/sources.php",
 		"/C/wamp64/www/Laith/classes/Source.php",
 		"/C/wamp64/www/Laith/classes/Store.php",
-		"/C/wamp64/www/Laith/classes/User.php",
 		"/C/wamp64/www/Laith/login.php",
 		"/C/wamp64/www/Laith/functions/ui.php",
 		"/C/wamp64/www/Laith/stores.php.old",
@@ -304,8 +344,96 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "classes/DB.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1898,
+								1898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1262.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "classes/Store.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2151,
+								2151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "stores.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3509,
+								3509
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1944.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],

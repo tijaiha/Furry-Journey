@@ -1,9 +1,11 @@
 <?php
 Class Store {
+
 	private $ID,
 	$sName,
 	$sActive,
 	$result = null;
+
 	function __construct($init) {
 		$this->Exists($init);
 	}

@@ -48,10 +48,15 @@ $editing = NULL;
 	}
 
 	if (!empty($_POST['employeeAddSubmit'])) {
-
+		$userstore = new DB();
+		$userstore->AddUserStore($_POST['employee'],$_POST['addEmployeeStoreID']);
 	}
 
 	if (!empty($_POST['employeeRemoveSubmit'])) {
+		echo "store " . $_POST['removeStoreID'] . "<br>";
+		echo "employee " . $_POST['removeEmployeeID'] . "<br>";
+		$removeuser = new DB();
+		$removeuser->RemoveUserStore($_POST['removeEmployeeID'], $_POST['removeStoreID']);
 
 	}
 
@@ -126,10 +131,13 @@ $editing = NULL;
 
 				$employeelist = $db->FetchEmployees($value['id']);
 				foreach ($employeelist as $key => $value) {
+
 					$activeid[] = $value['uid'];
 					echo
 					'<form action="index.php?page=stores" method="post" autocomplete="off">
-					<input type="hidden" id="removeEmployeeID" name="removeEmployeeID" value="' . $value['id'] .
+					<input type="hidden" id="removeStoreID" name="removeStoreID" value="' . $storeid .
+					'">
+					<input type="hidden" id="removeEmployeeID" name="removeEmployeeID" value="' . $value['uid'] .
 					'"><tr class="employees"><td>'
 					. $value['first_name'] .
 					'</td><td>'
@@ -137,7 +145,6 @@ $editing = NULL;
 					'</td><td>'
 					. $value['role'] .
 					'</td><td><input type="submit" name="employeeRemoveSubmit" value="Remove"></td></form></tr>';
-					//var_dump($value);
 				}
 				echo '<tr><td><form action="index.php?page=stores" method="post" autocomplete="off">
 				<input type="hidden" id="addEmployeeStoreID" name="addEmployeeStoreID" value="' . $storeid .
