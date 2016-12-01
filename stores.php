@@ -2,6 +2,7 @@
 require_once 'core/init.php';
 require_once 'includes/loggedin.php';
 $editing = NULL;
+$sourcestoreid;
 ?>
 
 <div class="transactionwrapper">
@@ -25,7 +26,7 @@ $editing = NULL;
 			$store->WriteStore();
 		}
 	}
-	if (!empty($_POST['editSubmit'])) {
+	if (!empty($_POST['editSubmit']) OR $_POST['sourceAddSubmit'] OR $_POST['sourceRemoveSubmit']) {
 		$store = new Store((int) $_POST['editStoreID']);
 		$editing = True;
 	}
@@ -48,18 +49,35 @@ $editing = NULL;
 	}
 
 	if (!empty($_POST['employeeAddSubmit'])) {
-		$userstore = new DB();
-		$userstore->AddUserStore($_POST['employee'],$_POST['addEmployeeStoreID']);
+		if ($_POST['employee'] == "null") {
+			$error = "Please select an employee.";
+			echo $error;
+		} else {
+			$userstore = new DB();
+			$userstore->AddUserStore($_POST['employee'],$_POST['addEmployeeStoreID']);
+		}
 	}
 
 	if (!empty($_POST['employeeRemoveSubmit'])) {
-		echo "store " . $_POST['removeStoreID'] . "<br>";
-		echo "employee " . $_POST['removeEmployeeID'] . "<br>";
 		$removeuser = new DB();
 		$removeuser->RemoveUserStore($_POST['removeEmployeeID'], $_POST['removeStoreID']);
 
 	}
 
+	if (!empty($_POST['sourceAddSubmit'])) {
+		if ($_POST['source'] == "null") {
+			$error = "Please select a source.";
+			echo $error;
+		} else {
+			$storesource = new DB();
+			$storesource->AddStoreSource($_POST['editStoreID'],$_POST['source']);
+		}
+	}
+
+	if (!empty($_POST['sourceRemoveSubmit'])) {
+		$removesource = new DB();
+		$removesource->RemoveStoreSource($_POST['editStoreID'], $_POST['removeSourceID']);
+	}
 	?>
 
 	<form action="index.php?page=stores" method="post" autocomplete="off">
@@ -89,7 +107,7 @@ $editing = NULL;
 				</td>
 				<td>
 					<input type="text" autocomplete="off" id="storeName" name="storeName" value="<?php
-					if (!empty($_POST['editSubmit'])) {
+					if (!empty($_POST['editSubmit']) OR $_POST['sourceAddSubmit'] OR $_POST['sourceRemoveSubmit']) {
 						echo $store->GetName();
 					}
 					?>">
@@ -106,11 +124,14 @@ $editing = NULL;
 
 			<!-- PULL FROM DATABASE -->
 			<?php
+
 			$db = new DB;
 			$btd = "<td><p>";
 			$etd = "</p></td>";
 			$storeid;
 			$activeid = array();
+
+
 
 			$storelist = $db->FetchStores();
 			foreach ($storelist as $key => $value) {
@@ -148,7 +169,7 @@ $editing = NULL;
 				}
 				echo '<tr><td><form action="index.php?page=stores" method="post" autocomplete="off">
 				<input type="hidden" id="addEmployeeStoreID" name="addEmployeeStoreID" value="' . $storeid .
-				'"><td><select id="employee" name="employee">';
+				'"><td><select id="employee" name="employee"><option selected value="null">Select Employee</option>';
 				$db->nonActiveEmployee($activeid);
 				unset($activeid);
 				echo'</select></td>
@@ -164,4 +185,35 @@ $editing = NULL;
 
 <div class="actionwrapper">
 
+	<table>
+		<tr>
+			<td><label for="source">Add Sources:</label></td>
+		</tr>
+		<!-- END OF FORM -->
+
+		<!-- PULL FROM DATABASE -->
+		<?php
+		if (!empty($_POST['updateSubmit']) OR !empty($_POST['sourceRemoveSubmit']) OR !empty($_POST['sourceAddSubmit']) OR !empty($_POST['editSubmit'])) {
+			$db = new DB;
+			$activeid = array();
+			$sourcelist = $db->FetchSources($_POST['editStoreID']);
+			foreach ($sourcelist as $key => $value) {
+				$activeid[] = $value['sid'];
+				echo
+				'<form action="index.php?page=stores" method="post" autocomplete="off"><input type="hidden" id="editStoreID" name="editStoreID" value="' . $_POST['editStoreID'] .
+				'"><input type="hidden" id="removeSourceID" name="removeSourceID" value="' . $value['sid'] .
+				'"><tr class="employees"><td>'
+				. $value['source'] .
+				'</td><td><input type="submit" name="sourceRemoveSubmit" value="Remove"></td></form></tr>';
+			}
+			echo '<tr><td><form action="index.php?page=stores" method="post" autocomplete="off">
+			<input type="hidden" id="editStoreID" name="editStoreID" value="' . $_POST['editStoreID'] .
+			'"><td><select id="source" name="source"><option selected value="null">Select Source</option>';
+			$db->nonActiveSource($activeid);
+			unset($activeid);
+			echo'</select></td>
+			<td><input type="submit" name="sourceAddSubmit" value="Add"></td></tr>';
+		}
+		?>
+	</table>
 </div>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"exe",
+				"execute"
+			],
+			[
 				"remo",
 				"removeEmployeeID"
 			],
@@ -144,19 +148,10 @@
 	"buffers":
 	[
 		{
-			"file": "classes/DB.php",
+			"file": "daily.php",
 			"settings":
 			{
-				"buffer_size": 6748,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "classes/Store.php",
-			"settings":
-			{
-				"buffer_size": 2644,
+				"buffer_size": 1790,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -165,7 +160,25 @@
 			"file": "stores.php",
 			"settings":
 			{
-				"buffer_size": 4564,
+				"buffer_size": 6533,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sources.php",
+			"settings":
+			{
+				"buffer_size": 3066,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "classes/DB.php",
+			"settings":
+			{
+				"buffer_size": 9368,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -249,21 +262,21 @@
 	],
 	"file_history":
 	[
-		"/C/wamp64/www/Laith/classes/User.php",
-		"/C/wamp64/www/login/classes/DB.php",
-		"/C/wamp64/www/Laith/stores.php",
+		"/C/wamp64/www/Laith/functions/ui.php",
+		"/C/wamp64/www/Laith/includes/loggedin.php",
 		"/C/wamp64/www/Laith/index.php",
-		"/C/wamp64/www/Laith/css/styles.css",
+		"/C/wamp64/www/Laith/stores.php",
+		"/C/wamp64/www/Laith/classes/Store.php",
 		"/C/wamp64/www/Laith/classes/DB.php",
 		"/C/wamp64/www/Laith/daily.php",
+		"/C/wamp64/www/Laith/classes/User.php",
+		"/C/wamp64/www/login/classes/DB.php",
+		"/C/wamp64/www/Laith/css/styles.css",
 		"/C/wamp64/www/Laith/sources.php",
 		"/C/wamp64/www/Laith/classes/Source.php",
-		"/C/wamp64/www/Laith/classes/Store.php",
 		"/C/wamp64/www/Laith/login.php",
-		"/C/wamp64/www/Laith/functions/ui.php",
 		"/C/wamp64/www/Laith/stores.php.old",
 		"/C/wamp64/www/Laith/users.php",
-		"/C/wamp64/www/Laith/includes/loggedin.php",
 		"/C/wamp64/www/Laith/core/init.php",
 		"/C/Users/tijai/Documents/AHK Scripts/7DTD.ahk",
 		"/C/Users/tijai/AppData/Local/Temp/Temp1_RELXIX_A15b105_HUD_v0.16.zip/ReadMe.HUD.txt",
@@ -294,9 +307,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"echo",
+			"$_Post['editstoreid",
+			"var",
+			"$results[0]",
 			"table",
 			"Store",
 			"store",
@@ -325,7 +342,7 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
 			"Source",
@@ -344,24 +361,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "classes/DB.php",
+					"file": "daily.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6748,
+						"buffer_size": 1790,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1898,
-								1898
+								121,
+								121
 							]
 						],
 						"settings":
@@ -370,27 +387,56 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1262.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "stores.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2240,
+								2240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 460.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "classes/Store.php",
+					"buffer": 2,
+					"file": "sources.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2644,
+						"buffer_size": 3066,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2151,
-								2151
+								2824,
+								2824
 							]
 						],
 						"settings":
@@ -399,27 +445,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 918.0,
+						"translation.y": 1458.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "stores.php",
+					"buffer": 3,
+					"file": "classes/DB.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4564,
+						"buffer_size": 9368,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3509,
-								3509
+								5423,
+								5423
 							]
 						],
 						"settings":
@@ -428,7 +474,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1944.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

@@ -68,7 +68,7 @@ function GetStores($id) {
 	FROM store_user
 	LEFT JOIN store
 	ON store_user.store_id_fk=store.id_pk
-	WHERE store.store_active = "1" AND store_user.user_id_fk ="' . $id . '"';
+	WHERE store.store_active = "1" AND store_user.store_user_active = "1" AND store_user.user_id_fk ="' . $id . '"';
 
 	$query = $db->prepare($sql);
 	$query->execute();
@@ -99,7 +99,7 @@ function StoreName($store) {
 function StoreAuth() {
 	$db = new DB();
 	$db = $db->connect();
-	$query = $db->query('SELECT store_id_fk as store_id FROM store_user WHERE user_id_fk="' . $_SESSION['user_id'] . '"');
+	$query = $db->query('SELECT store_id_fk as store_id FROM store_user WHERE store_user_active = "1" AND user_id_fk="' . $_SESSION['user_id'] . '"');
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	foreach ($result as $key => $value) {
@@ -107,5 +107,6 @@ function StoreAuth() {
 			$storeauth[] = $value;
 		}
 	}
+	unset($_SESSION['storeauth']);
 	$_SESSION['storeauth'] = $storeauth;
 }
