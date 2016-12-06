@@ -19,6 +19,11 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 			<div class="revenueheader">
 				<div><h1>Store Revenue (Cash In)</h1></div>
 			</div>
+			<?php
+			$daily = new Daily($_GET['s'], $_SESSION['user_id']);
+			$daily->WriteHTML();
+
+			 ?>
 			<div class="revenuesource">
 				<div><p>Source</p></div>
 				<div><p>Input</p></div>

@@ -264,6 +264,26 @@ Class DB {
 		}
 	}
 
+	public function DupSources($src, $des){
+
+		$this->ClearStoreSource($des);
+
+		$db = $this->connect();
+		$srcsql = 'SELECT
+				source_id_fk as source
+				FROM store_source
+				WHERE store_id_fk = :sid AND store_source_active = 1';
+		$query = $db->prepare($srcsql);
+		$query->bindValue(':sid', $src);
+		$query->execute();
+		$srcresult = $query->fetchAll(PDO::FETCH_ASSOC);
+
+		foreach ($srcresult as $key => $value) {
+			$this->AddStoreSource($des, $value['source']);
+		}
+
+	}
+
 	public function AddUserStore($user, $store) {
 		$db = $this ->connect();
 		$sql = "SELECT id_pk as id,
@@ -341,6 +361,18 @@ Class DB {
 			$query->execute();
 
 		}
+	}
+
+	public function ClearStoreSource($id){
+
+		$db = $this->connect();
+		$sql = 'UPDATE store_source SET store_source_active = 0 WHERE store_id_fk = :sid';
+		$query = $db->prepare($sql);
+		$query->bindValue(':sid', $id);
+		$query->execute();
+
+		$count = $query->rowCount();
+
 	}
 
 	public function FetchEmployees($id) {
