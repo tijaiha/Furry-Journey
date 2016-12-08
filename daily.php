@@ -21,13 +21,9 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 			</div>
 			<?php
 			$daily = new Daily($_GET['s'], $_SESSION['user_id']);
-			$daily->WriteHTML();
-
+			$daily->InitDay();
+			echo $daily->GetRevenue();
 			 ?>
-			<div class="revenuesource">
-				<div><p>Source</p></div>
-				<div><p>Input</p></div>
-			</div>
 		</div>
 		<div class="deductions">
 			<div class="endingcontainer">
@@ -37,10 +33,9 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 			<div class="deductionsheader">
 				<div><h1>Store Revenue (Cash Out)</h1></div>
 			</div>
-			<div class="deductionssource">
-				<div><p>Source</p></div>
-				<div><p>Input</p></div>
-			</div>
+			<?php
+			echo $daily->GetDeduction();
+			?>
 		</div>
 	</div>
 	<div class="transmid">

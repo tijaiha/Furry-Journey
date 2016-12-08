@@ -22,6 +22,26 @@ Class DB {
 		}
 	}
 
+	static function Create(){
+
+		$dsn = 'mysql:host=127.0.0.1;dbname=reporting';
+		$username = 'reportingdb';
+		$password = '?4o=WxInph-w#n6%=_';
+
+		try {
+
+			$db = new PDO($dsn, $username, $password);
+			$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+			return $db;
+
+		} catch(PDOException $e) {
+
+
+			die($e->getMessage());
+
+		}
+	}
+
 	public function runQuery($sql) {
 
 		$query = $this->connect();
@@ -270,9 +290,9 @@ Class DB {
 
 		$db = $this->connect();
 		$srcsql = 'SELECT
-				source_id_fk as source
-				FROM store_source
-				WHERE store_id_fk = :sid AND store_source_active = 1';
+		source_id_fk as source
+		FROM store_source
+		WHERE store_id_fk = :sid AND store_source_active = 1';
 		$query = $db->prepare($srcsql);
 		$query->bindValue(':sid', $src);
 		$query->execute();

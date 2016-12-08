@@ -414,6 +414,19 @@ h1 {
 	margin-top: 6px;
 }
 
+.rinput,
+.dinput {
+	text-align: center;
+	background-color: transparent;
+    border: 0px solid;
+    color: #767171;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
 .revenuesource div,
 .deductionssource div{
 	align-items: center;
