@@ -251,7 +251,7 @@ $editing = NULL;
 				'<form action="index.php?page=users" method="post" autocomplete="off"><input type="hidden" id="editUserID" name="editUserID" value="' . $value['id'] . '">' .
 				$btd . $value['active'] . $etd .
 				$btd . $value['user'] . $etd .
-				$btd . $etd .
+				$btd . $value['pass'] . $etd .
 				$btd . $value['first'] . $etd .
 				$btd . $value['last'] . $etd .
 				$btd . $value['role'] . $etd .

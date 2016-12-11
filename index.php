@@ -14,6 +14,8 @@ require_once 'includes/loggedin.php';
 	<title>Argus Check Cashing - <?php SetPageTitle($_GET["page"]);?></title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../scripts/ui.js"></script>
 
 </head>
 

@@ -485,7 +485,7 @@ textarea:focus, input:focus{
 
 .calendar {
 	/*calendar 297x233*/
-	background-image: url("../images/calendar.png");
+	/* background-image: url("../images/calendar.png"); */
 	background-repeat: no-repeat;
 	max-height: 233px;
 	max-width: 297px;
@@ -494,12 +494,12 @@ textarea:focus, input:focus{
 }
 
 .savebutton {
-	background-color: yellow;
+	/* background-color: yellow; */
 	display: flex;
 }
 
 .submitbutton {
-	background-color: green;
+	/* background-color: green; */
 	display: flex;
 }
 

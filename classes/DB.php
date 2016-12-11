@@ -181,6 +181,7 @@ Class DB {
 			SELECT user.id_pk as id,
 			user.first_name as first,
 			user.last_name as last,
+			user.password as pass,
 			user.username as user,
 			user.user_active as active,
 			permissions.permission_name as role
