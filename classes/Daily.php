@@ -164,7 +164,7 @@ class Daily
 			}
 			return $results;
 		} else {
-			echo "Failed";
+
 		}
 	}
 
@@ -174,25 +174,29 @@ class Daily
 	}
 
 	private function CompareDate(){
-		$now = date("Y-m-d");
+		$now = date("Y-m-d") . "%";
 		$sql = 'SELECT id_pk as id, created as cdate, source_id_fk as source FROM daily WHERE user_id_fk = :uid AND store_id_fk = :sid AND created LIKE :now';
 
 		$db = DB::Create();
 		$query = $db->prepare($sql);
 		$query->bindValue(':uid', $this->_user);
 		$query->bindValue(':sid', $this->_store);
-		$query->bindValue(':now', $now . '%');
+		$query->bindValue(':now', $now);
 		$query->execute();
 
 		$source = $this->FetchSources();
+
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
+
 		$out = array();
 
 		if (!empty($result)) {
+
 			foreach ($result as $key => $value) {
 				$results[] = $value['source'];
 			}
 		} else {
+
 			foreach ($source as $key => $value) {
 				$this->_source = $value;
 				$this->WriteTrans();
@@ -232,8 +236,10 @@ class Daily
 			$query->bindValue(':rval', $this->_revenuevalue);
 			$query->bindValue(':dval', $this->_deductionvalue);
 			$query->execute();
+
 			return true;
 		} else {
+
 			return false;
 		}
 	}
@@ -243,8 +249,8 @@ class Daily
 		$db = DB::Create();
 		$rarr = array();
 		$darr = array();
-
 		if (!empty($_POST['formSave'])){
+
 			unset($_POST['formSave']);
 			ksort($_POST);
 			foreach ($_POST as $key => $value) {
@@ -272,7 +278,6 @@ class Daily
 		} elseif (!empty($_POST['formSubmit'])) {
 
 		}
-
 
 	}
 

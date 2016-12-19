@@ -13,19 +13,19 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 ?>
 
 <div class="transactionwrapper">
-		<div class="transtop">
-			<div class="revenue">
-				<div class="startingcontainer">
-					<div><h1>Starting Cash</h1></div>
-					<div><h1>$10,000</h1></div>
-				</div>
-				<div class="revenueheader">
-					<div><h1>Store Revenue (Cash In)</h1></div>
-				</div>
-				<form action="index.php?page=daily&s=<?php echo $_GET['s']; ?>" method="post" autocomplete="off">
+	<div class="transtop">
+		<div class="revenue">
+			<div class="startingcontainer">
+				<div><h1>Starting Cash</h1></div>
+				<div><h1>$10,000</h1></div>
+			</div>
+			<div class="revenueheader">
+				<div><h1>Store Revenue (Cash In)</h1></div>
+			</div>
+			<form action="index.php?page=daily&s=<?php echo $_GET['s']; ?>" method="post" autocomplete="off">
 				<?php
 				$daily = new Daily($_GET['s'], $_SESSION['user_id']);
-				$daily->UpdateTrans();
+				$daily->UpdateTrans(); // Commit form data.
 				$daily->InitDay();
 				echo $daily->GetRevenue();
 				?>
@@ -57,10 +57,10 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 			<div><h1>End of Day Balance</h1></div>
 			<div><h1><?php $daily->TotalDed($_GET['s']); ?></h1></div>
 		</div>
-</div>
+	</div>
 
-<div class="actionwrapper">
-					 <div class="navbuttons">
+	<div class="actionwrapper">
+		<div class="navbuttons">
 						<!-- <div><h1>Prev</h1></div>
 						<div><h1>Next</h1></div> -->
 					</div>
@@ -79,4 +79,4 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 					</div>
 
 				</div>
-	</form>
+			</form>
