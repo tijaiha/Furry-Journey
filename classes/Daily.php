@@ -154,7 +154,6 @@ class Daily
 		} else {
 			$query->bindValue(':store', $store);
 		}
-
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -186,7 +185,6 @@ class Daily
 		$query->execute();
 
 		$source = $this->FetchSources();
-
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
 		$out = array();
 
@@ -305,7 +303,6 @@ class Daily
 		}
 
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
-
 		foreach ($result as $key => $value) {
 			$name = $value['name'];
 			$rev = number_format($value['revenue'], 2, '.', '');
