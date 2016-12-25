@@ -113,7 +113,7 @@ class Daily
 			$revenue += $value['rev'];
 		}
 
-		echo "$" . number_format($revenue, 2, ".", ",");
+		return $revenue;
 	}
 
 	public function TotalDed($store){
@@ -133,10 +133,22 @@ class Daily
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 		foreach ($result as $key => $value) {
-			$revenue += $value['ded'];
+			$deduction += $value['ded'];
 		}
 
-		echo "$" . number_format($revenue, 2, ".", ",");
+		return $deduction;
+	}
+
+	public function ReturnRev($store) {
+		echo "$" . number_format($this->TotalRev($store), 2, ".", ",");
+	}
+
+	public function ReturnDed($store) {
+		echo "$" . number_format($this->TotalDed($store), 2, ".", ",");
+	}
+
+	public function EndCash($store) {
+		echo "$" . number_format($this->TotalRev($store) - $this->TotalDed($store), 2, ".", ",");
 	}
 
 	public function FetchSources($store = null){

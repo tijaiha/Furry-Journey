@@ -8,6 +8,10 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 	header('Location: index.php?page=daily&s=' . $_SESSION['storeauth'][0]);
 }
 
+if (isset($_SESSION['user']) && !isset($_GET['s']))  {
+	header('Location: index.php?page=blank');
+}
+
 /*starting cash + cash in - cash out = ending cash = next day starting cash*/
 
 ?>
@@ -17,7 +21,7 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 		<div class="revenue">
 			<div class="startingcontainer">
 				<div><h1>Starting Cash</h1></div>
-				<div><h1>$10,000</h1></div>
+				<div><h1>$0</h1></div>
 			</div>
 			<div class="revenueheader">
 				<div><h1>Store Revenue (Cash In)</h1></div>
@@ -33,7 +37,7 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 			<div class="deductions">
 				<div class="endingcontainer">
 					<div><h1>Ending Cash</h1></div>
-					<div><h1>$250</h1></div>
+					<div><h1><?php $daily->EndCash($_GET['s']); ?></h1></div>
 				</div>
 				<div class="deductionsheader">
 					<div><h1>Store Revenue (Cash Out)</h1></div>
@@ -46,11 +50,11 @@ if (isset($_SESSION['user']) && !in_array($_GET['s'], $_SESSION['storeauth'])) {
 		<div class="transmid">
 			<div class="revenuecontainer">
 				<div><h1>Total Revenue</h1></div>
-				<div><h1><?php $daily->TotalRev($_GET['s']); ?></h1></div>
+				<div><h1><?php $daily->ReturnRev($_GET['s']); ?></h1></div>
 			</div>
 			<div class="deductionscontainer">
 				<div><h1>Total Deductions</h1></div>
-				<div><h1><?php $daily->TotalDed($_GET['s']); ?></h1></div>
+				<div><h1><?php $daily->ReturnDed($_GET['s']); ?></h1></div>
 			</div>
 		</div>
 		<div class="transbottom">

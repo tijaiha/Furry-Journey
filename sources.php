@@ -54,7 +54,7 @@ $editing = NULL;
 			echo $source->GetID();
 		}
 		?>">
-		<table>
+		<table class="spacing">
 			<tr>
 				<td><label for="sourceActive">Active: </label></td>
 				<td><label for="sourceName">Source Name: </label></td>

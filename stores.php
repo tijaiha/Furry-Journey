@@ -92,7 +92,7 @@ if (!empty($_POST['dupeSources'])) {
 		echo $store->GetID();
 	}
 	?>">
-	<table>
+	<table class="spacing">
 		<tr>
 			<td><label for="storeActive">Active: </label></td>
 			<td><label for="storeName">Store Name: </label></td>

@@ -112,7 +112,7 @@ $editing = NULL;
 			echo $user->GetID();
 		}
 		?>">
-		<table>
+		<table class="spacing">
 			<tr>
 				<td><label for="userActive">Active: </label></td>
 				<td><label for="userName">Username: </label></td>
@@ -240,10 +240,10 @@ $editing = NULL;
 
 				if ($value['active'] == 1) {
 					$value['active'] = "Active";
-					$row = '<tr class="active">';
+					$row = '<tbody class="row"><tr class="user active"><div>';
 				} else {
 					$value['active'] = "Inactive";
-					$row = '<tr class="inactive">';
+					$row = '<tbody class="row"><tr class="user inactive"><div>';
 				}
 
 				echo
@@ -255,7 +255,7 @@ $editing = NULL;
 				$btd . $value['first'] . $etd .
 				$btd . $value['last'] . $etd .
 				$btd . $value['role'] . $etd .
-				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></tr>';
+				'<td><input type="submit" name="editSubmit" value="Edit"></td></form></div></tr></tbody>';
 			}
 			?>
 

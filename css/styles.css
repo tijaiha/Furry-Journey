@@ -518,5 +518,33 @@ textarea:focus, input:focus{
 
 .employees {
 	border: 1px ;
-	background-color: pink;
+	background-color: #c5e0b4;
+}
+
+.spacing
+{
+    border-collapse:separate;
+    border-spacing: 4px 5px;
+}
+
+.row {
+	display: table-row-group;
+	margin-top: 10px;
+}
+
+.user td div {
+	border-top: 1px;
+	border-bottom: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: #c5e0b4;
+
+}
+
+.user:first-child {
+background-color: white;
+}
+
+.user:last-child {
+
 }
